@@ -1,0 +1,315 @@
+<section class="modulex-h5 modulex-h5--{{h5stil}} modulex-h5-hiza-{{h5hiza}}" data-mx-hero="1" aria-labelledby="h5-{{id}}-baslik" style="--h5-yk: {{h5yk}};">
+  <div class="modulex-h5-arka" aria-hidden="true">{{h5medya}}</div>
+  <div class="modulex-h5-scrim" aria-hidden="true"></div>
+  <div class="modulex-h5-wrap">
+    <div class="modulex-h5-icerik">
+      <p class="modulex-h5-eyebrow modulex-h5-in">{{eyebrow}}</p>
+      <h1 class="modulex-h5-baslik modulex-h5-in" id="h5-{{id}}-baslik">{{title}}</h1>
+      <p class="modulex-h5-metin modulex-h5-in">{{metin}}</p>
+      <div class="modulex-h5-ctalar modulex-h5-in">{{h5ctalar}}</div>
+    </div>
+  </div>
+  <a class="modulex-h5-ok" href="#h5-{{id}}-son" aria-label="{{scroll_label}}">
+    <span class="material-symbols-outlined" aria-hidden="true">keyboard_arrow_down</span>
+  </a>
+  <span id="h5-{{id}}-son" class="modulex-h5-son" aria-hidden="true"></span>
+</section>
+
+<style>
+  /* Hero 5 — Tam ekran parallax/video (31 Eki 2026, G8-A).
+     Görsel üstü metin: overlay/overlayText ÇİFTİ (paletten bağımsız koyu scrim + açık yazı — iki modda da aynı kontrast;
+     fotoğraf altta olduğu için palet token'ı zemin olamaz). Düğme: accent/accentText çifti. */
+  .modulex-h5 {
+    box-sizing: border-box;
+    position: relative;
+    width: 100%;
+    min-height: max(480px, calc(var(--h5-yk, 88) * 1vh));
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    isolation: isolate;
+    background: --overlay--;
+    color: --overlayText--;
+  }
+  @supports (height: 1svh) {
+    .modulex-h5 { min-height: max(480px, calc(var(--h5-yk, 88) * 1svh)); }
+  }
+  .modulex-h5 *,
+  .modulex-h5 *::before,
+  .modulex-h5 *::after { box-sizing: border-box; }
+
+  /* arka plan: görsel ya da video; parallax JS translate ile, %12 büyütme boşluk bırakmasın diye */
+  .modulex-h5-arka {
+    position: absolute;
+    inset: -12% 0;
+    z-index: -2;
+    will-change: transform;
+  }
+  .modulex-h5-arka img,
+  .modulex-h5-arka video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .modulex-h5-arka video {
+    position: absolute;
+    inset: 0;
+  }
+  .modulex-h5-ph {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, color-mix(in srgb, --accent-- 55%, --overlay--), --overlay-- 70%);
+  }
+  .modulex-h5-scrim {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(180deg,
+      color-mix(in srgb, --overlay-- 34%, transparent) 0%,
+      color-mix(in srgb, --overlay-- 58%, transparent) 45%,
+      color-mix(in srgb, --overlay-- 86%, transparent) 100%);
+  }
+
+  .modulex-h5-wrap {
+    width: 100%;
+    max-width: --max--;
+    margin-inline: auto;
+    padding: clamp(72px, 10vw, 120px) clamp(16px, 4vw, 32px) clamp(96px, 12vw, 140px);
+    display: flex;
+  }
+  .modulex-h5-icerik { max-width: 64ch; }
+  .modulex-h5-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 0 16px;
+    padding: 6px 14px;
+    border: 1px solid color-mix(in srgb, --overlayText-- 40%, transparent);
+    border-radius: 999px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: --overlayText--;
+    background: color-mix(in srgb, --overlay-- 45%, transparent);
+  }
+  .modulex-h5-baslik {
+    margin: 0 0 18px;
+    font-size: clamp(2.1rem, 1.2rem + 3.6vw, 4.2rem);
+    line-height: 1.06;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: --overlayText--;
+    text-wrap: balance;
+    text-shadow: 0 2px 24px rgba(0, 0, 0, 0.35);
+  }
+  .modulex-h5-metin {
+    margin: 0 0 30px;
+    font-size: clamp(1rem, 0.95rem + 0.4vw, 1.25rem);
+    line-height: 1.7;
+    color: color-mix(in srgb, --overlayText-- 90%, transparent);
+  }
+  .modulex-h5-ctalar { display: flex; flex-wrap: wrap; gap: 14px; }
+  .modulex-h5 a.modulex-h5-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 50px;
+    padding: 12px 28px;
+    border-radius: calc(--radius-- / 1.3);
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
+  }
+  /* css.css bağlantı rengi :where() ile sıfır özgüllük (31 Eki) → :link/:visited tekrarı gerekmez; varyant kuralları ezebilsin */
+  .modulex-h5 a.modulex-h5-cta--dolgu {
+    background: --accent--;
+    color: --accentText--;
+    border-color: --accent--;
+  }
+  .modulex-h5 a.modulex-h5-cta--cerceve {
+    background: color-mix(in srgb, --overlay-- 35%, transparent);
+    color: --overlayText--;
+    border-color: color-mix(in srgb, --overlayText-- 55%, transparent);
+    backdrop-filter: blur(6px);
+  }
+  .modulex-h5 a.modulex-h5-cta:hover,
+  .modulex-h5 a.modulex-h5-cta:focus-visible {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.28);
+  }
+  .modulex-h5 a.modulex-h5-cta--cerceve:hover { border-color: --overlayText--; }
+  .modulex-h5 a.modulex-h5-cta:focus-visible { outline: 3px solid --overlayText--; outline-offset: 3px; }
+  .modulex-h5-cta .material-symbols-outlined { font-size: 20px; }
+  [dir="rtl"] .modulex-h5-cta .material-symbols-outlined { transform: scaleX(-1); }
+
+  /* aşağı kaydır oku */
+  .modulex-h5 a.modulex-h5-ok {
+    position: absolute;
+    bottom: 22px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1px solid color-mix(in srgb, --overlayText-- 50%, transparent);
+    color: --overlayText--;
+    background: color-mix(in srgb, --overlay-- 40%, transparent);
+    text-decoration: none;
+    cursor: pointer;
+    animation: modulexH5Zipla 1.8s ease-in-out infinite;
+    transition: background-color 0.25s ease;
+  }
+  .modulex-h5 a.modulex-h5-ok:hover,
+  .modulex-h5 a.modulex-h5-ok:focus-visible { background: color-mix(in srgb, --overlay-- 75%, transparent); outline-color: --overlayText--; }
+  .modulex-h5-ok .material-symbols-outlined { font-size: 28px; }
+  .modulex-h5-son { position: absolute; bottom: 0; width: 1px; height: 1px; }
+  @keyframes modulexH5Zipla {
+    0%, 100% { transform: translate(-50%, 0); }
+    50% { transform: translate(-50%, 6px); }
+  }
+
+  /* === Varyant: ortali === */
+  .modulex-h5--ortali .modulex-h5-wrap { justify-content: center; text-align: center; }
+  .modulex-h5--ortali .modulex-h5-icerik { max-width: 760px; }
+  .modulex-h5--ortali .modulex-h5-ctalar { justify-content: center; }
+
+  /* === Varyant: sol — başlangıç hizası, dikey vurgu çizgisi === */
+  .modulex-h5--sol .modulex-h5-wrap { justify-content: flex-start; text-align: start; }
+  .modulex-h5--sol .modulex-h5-icerik {
+    padding-inline-start: 22px;
+    border-inline-start: 4px solid --accent--;
+  }
+  .modulex-h5--sol .modulex-h5-eyebrow { border-radius: 4px; }
+  .modulex-h5--sol a.modulex-h5-ok { left: auto; inset-inline-start: clamp(16px, 4vw, 32px); transform: none; }
+  .modulex-h5--sol a.modulex-h5-ok { animation-name: modulexH5ZiplaDuz; }
+  @keyframes modulexH5ZiplaDuz {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(6px); }
+  }
+
+  /* === Varyant: alt-serit — metin alt şeritte yarı saydam kart === */
+  .modulex-h5--alt-serit { align-items: flex-end; }
+  .modulex-h5--alt-serit .modulex-h5-scrim {
+    background: linear-gradient(180deg, color-mix(in srgb, --overlay-- 10%, transparent) 0%, color-mix(in srgb, --overlay-- 30%, transparent) 60%, color-mix(in srgb, --overlay-- 70%, transparent) 100%);
+  }
+  .modulex-h5--alt-serit .modulex-h5-wrap { padding-top: 48px; padding-bottom: 86px; }
+  .modulex-h5--alt-serit .modulex-h5-icerik {
+    max-width: none;
+    width: 100%;
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+    gap: 16px 40px;
+    align-items: end;
+    padding: 28px clamp(20px, 3vw, 40px);
+    border-radius: --radius--;
+    border: 1px solid color-mix(in srgb, --overlayText-- 22%, transparent);
+    background: color-mix(in srgb, --overlay-- 82%, transparent);
+    backdrop-filter: blur(10px);
+  }
+  .modulex-h5--alt-serit .modulex-h5-eyebrow { grid-column: 1; margin: 0 0 8px; }
+  .modulex-h5--alt-serit .modulex-h5-baslik { grid-column: 1; margin: 0; font-size: clamp(1.7rem, 1.1rem + 2.4vw, 3rem); text-shadow: none; }
+  .modulex-h5--alt-serit .modulex-h5-metin { grid-column: 2; grid-row: 1 / span 2; margin: 0; align-self: center; }
+  .modulex-h5--alt-serit .modulex-h5-ctalar { grid-column: 2; grid-row: 3; justify-content: flex-end; }
+  .modulex-h5--alt-serit a.modulex-h5-ok { bottom: auto; top: 22px; left: auto; inset-inline-end: 22px; transform: none; animation-name: modulexH5ZiplaDuz; }
+
+  /* hiza anahtarı (ortali varyantta yoksayılır) */
+  .modulex-h5-hiza-sol:not(.modulex-h5--ortali) .modulex-h5-wrap { justify-content: flex-start; text-align: start; }
+  .modulex-h5-hiza-orta.modulex-h5--sol .modulex-h5-wrap { justify-content: center; }
+
+  /* giriş animasyonu: yalnız JS varsa gizlenir */
+  .modulex-h5-js .modulex-h5-in { opacity: 0; transform: translateY(16px); transition: opacity 0.3s ease, transform 0.3s ease; }
+  .modulex-h5-js .modulex-h5-in:nth-child(2) { transition-delay: 0.07s; }
+  .modulex-h5-js .modulex-h5-in:nth-child(3) { transition-delay: 0.14s; }
+  .modulex-h5-js .modulex-h5-in:nth-child(4) { transition-delay: 0.21s; }
+  .modulex-h5-js.modulex-h5-goster .modulex-h5-in { opacity: 1; transform: none; }
+
+  @media (max-width: 1024px) {
+    .modulex-h5--alt-serit .modulex-h5-icerik { grid-template-columns: minmax(0, 1fr); }
+    .modulex-h5--alt-serit .modulex-h5-metin { grid-column: 1; grid-row: auto; }
+    .modulex-h5--alt-serit .modulex-h5-ctalar { grid-column: 1; grid-row: auto; justify-content: flex-start; }
+  }
+  @media (max-width: 768px) {
+    .modulex-h5 { min-height: max(480px, calc(var(--h5-yk, 88) * 0.85vh)); }
+    .modulex-h5-wrap { padding-top: 64px; padding-bottom: 88px; }
+    .modulex-h5-ctalar { flex-direction: column; }
+    .modulex-h5 a.modulex-h5-cta { width: 100%; }
+    .modulex-h5--alt-serit .modulex-h5-icerik { padding: 20px 16px; }
+    .modulex-h5--alt-serit .modulex-h5-wrap { padding-bottom: 32px; }
+    .modulex-h5--sol .modulex-h5-icerik { padding-inline-start: 16px; }
+  }
+
+  /* W2: mobil tasma kontrolu */
+  @media (max-width: 768px) {
+    [class*="modulex"] {
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+  }
+
+  /* W2: erisilebilirlik — animasyon kapatma; video yerine poster */
+  @media (prefers-reduced-motion: reduce) {
+    [class*="modulex"],
+    [class*="modulex"] * {
+      animation: none !important;
+      transition: none !important;
+    }
+    .modulex-h5-arka video { display: none; }
+    .modulex-h5-arka { transform: none !important; }
+    .modulex-h5-js .modulex-h5-in { opacity: 1; transform: none; }
+  }
+</style>
+<script>
+  (function () {
+    var kok = document.querySelector(".modulex-h5");
+    if (!kok) { return; }
+    var arka = kok.querySelector(".modulex-h5-arka");
+    var video = kok.querySelector(".modulex-h5-arka video");
+    var ok = kok.querySelector(".modulex-h5-ok");
+    var azalt = false;
+    try { azalt = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches; } catch (e) { azalt = false; }
+
+    /* ok: bölümün bitimine yumuşak kaydır (href yedeği zaten var) */
+    if (ok) {
+      ok.addEventListener("click", function (ev) {
+        ev.preventDefault();
+        var hedef = kok.getBoundingClientRect().bottom + (window.pageYOffset || document.documentElement.scrollTop || 0);
+        try { window.scrollTo({ top: hedef, behavior: azalt ? "auto" : "smooth" }); } catch (e2) { window.scrollTo(0, hedef); }
+      });
+    }
+
+    if (azalt) {
+      if (video) { try { video.pause(); video.removeAttribute("autoplay"); } catch (e3) { /* yok say */ } }
+      return;
+    }
+    if (video) { try { var p = video.play(); if (p && p.catch) { p.catch(function () { /* otomatik oynatma engeli: poster kalır */ }); } } catch (e4) { /* yok say */ } }
+
+    /* giriş animasyonu */
+    kok.classList.add("modulex-h5-js");
+    setTimeout(function () { kok.classList.add("modulex-h5-goster"); }, 80);
+
+    /* parallax: yalnız hero görünürken, rAF ile; hareket ≤ %25 */
+    var bekliyor = false;
+    function uygula() {
+      bekliyor = false;
+      var r = kok.getBoundingClientRect();
+      if (r.bottom < 0 || r.top > window.innerHeight) { return; }
+      var kayma = Math.max(0, -r.top) * 0.25;
+      arka.style.transform = "translate3d(0," + kayma.toFixed(1) + "px,0)";
+    }
+    if (arka) {
+      window.addEventListener("scroll", function () {
+        if (!bekliyor) { bekliyor = true; window.requestAnimationFrame(uygula); }
+      }, { passive: true });
+      uygula();
+    }
+  })();
+</script>

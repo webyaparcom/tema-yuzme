@@ -1,0 +1,42 @@
+{
+  "name": "Hero 2 (Ortalanmış)",
+  "desing": {
+    "max": "1200px",
+    "gradient": "linear-gradient(150deg, #0f172a 0%, #1e3046 55%, #0f172a 100%)",
+    "glow1": "rgba(222, 109, 38, 0.55)",
+    "glow2": "rgba(33, 150, 243, 0.45)",
+    "btnbg": "#B4521A",
+    "btncolor": "#ffffff",
+    "badge": {
+      "tr": "Yeni Nesil Çözümler",
+      "en": "Next Generation Solutions"
+    },
+    "title": {
+      "tr": "İşinizi Dijitalde Büyütün",
+      "en": "Grow Your Business Digitally"
+    },
+    "description": {
+      "tr": "Modern tasarım ve güçlü altyapıyla markanızı bir üst seviyeye taşıyın.",
+      "en": "Take your brand to the next level with modern design and a strong infrastructure."
+    },
+    "btn1Text": {
+      "tr": "Hemen Başla",
+      "en": "Get Started"
+    },
+    "btn1Url": "/tr/iletisim",
+    "btn2Text": {
+      "tr": "Daha Fazla Bilgi",
+      "en": "Learn More"
+    },
+    "btn2Url": "/tr/hakkimizda"
+  },
+  "category": "hero",
+  "description": "Ortalanmış hero varyantı (hero-1'in split düzenine alternatif). Blur glow arka plan animasyonları, rozet, büyük başlık ve iki CTA butonu; tamamen desing token'larıyla renklendirilir.",
+  "version": "1.0.0",
+  "icon": "hero",
+  "veri": {
+    "statik": true,
+    "dinamik": false,
+    "kaynak": "desing/data"
+  }
+}

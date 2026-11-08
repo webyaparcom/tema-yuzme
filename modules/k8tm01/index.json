@@ -1,0 +1,72 @@
+{
+  "name": "Ekip 1",
+  "desing": {
+    "max": "1200px",
+    "bgcolor": "#ffffff",
+    "cardbg": "#f8fafc",
+    "bordercolor": "#e2e8f0",
+    "titlecolor": "#1e293b",
+    "textcolor": "#475569",
+    "accent": "#DE6D26",
+    "badge": {
+      "tr": "Ekibimiz",
+      "en": "Our Team"
+    },
+    "title": {
+      "tr": "Uzman Kadromuzla Tanışın",
+      "en": "Meet Our Experts"
+    },
+    "description": {
+      "tr": "Alanında deneyimli ekibimiz projelerinize değer katmak için burada.",
+      "en": "Our experienced team is here to add value to your projects."
+    },
+    "accentText": "#ffffff"
+  },
+  "data": [
+    {
+      "name": "Ad Soyad",
+      "role": {
+        "tr": "Kurucu / CEO",
+        "en": "Founder / CEO"
+      },
+      "bio": {
+        "tr": "10+ yıllık sektör deneyimi ile strateji ve yönetim.",
+        "en": "Strategy and management with 10+ years of industry experience."
+      },
+      "img": ""
+    },
+    {
+      "name": "Ad Soyad",
+      "role": {
+        "tr": "Tasarım Direktörü",
+        "en": "Design Director"
+      },
+      "bio": {
+        "tr": "Marka kimliği ve kullanıcı deneyimi tasarımı.",
+        "en": "Brand identity and user experience design."
+      },
+      "img": ""
+    },
+    {
+      "name": "Ad Soyad",
+      "role": {
+        "tr": "Yazılım Geliştirici",
+        "en": "Software Developer"
+      },
+      "bio": {
+        "tr": "Modern web teknolojileri ile ölçeklenebilir çözümler.",
+        "en": "Scalable solutions with modern web technologies."
+      },
+      "img": ""
+    }
+  ],
+  "category": "team",
+  "description": "Ekip üyeleri modülü. Fotoğraf, isim, unvan ve kısa biyografiyi responsive kart grid'inde gösterir. Fotoğraf yoksa ikon fallback, çok dilli unvan/biyografi ve animasyonlu giriş içerir.",
+  "version": "1.0.0",
+  "icon": "groups",
+  "veri": {
+    "statik": true,
+    "dinamik": false,
+    "kaynak": "desing/data"
+  }
+}

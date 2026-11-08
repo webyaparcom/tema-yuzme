@@ -1,0 +1,368 @@
+<section class="modulex-c7 modulex-c7--{{c7stil}}" id="c7-{{id}}">
+  {{c7map}}
+  <div class="modulex-c7__wrap">
+    <header class="modulex-c7__head">
+      <h2 class="modulex-c7__title">{{title}}</h2>
+      <p class="modulex-c7__desc">{{description}}</p>
+    </header>
+    <div class="modulex-c7__grid">
+      <aside class="modulex-c7__panel">
+        <h3 class="modulex-c7__ptitle">{{panelTitle}}</h3>
+        <p class="modulex-c7__ptext">{{panelText}}</p>
+        <ul class="modulex-c7__items">{{c7panelitems}}</ul>
+        <div class="modulex-c7__tail">{{c7maplink}}{{c7social}}</div>
+      </aside>
+      <div class="modulex-c7__formcard">
+        <h3 class="modulex-c7__ftitle">{{formTitle}}</h3>
+        <form class="modulex-c7__form" novalidate{{c7formattrs}}>
+          <div class="modulex-c7__row">
+            <div class="modulex-c7__field">
+              <label class="modulex-c7__label" for="c7-{{id}}-name">{{nameLabel}}</label>
+              <input class="modulex-c7__input" id="c7-{{id}}-name" name="name" type="text" autocomplete="name" required aria-describedby="c7-{{id}}-name-err" />
+              <p class="modulex-c7__err" id="c7-{{id}}-name-err"></p>
+            </div>
+            <div class="modulex-c7__field">
+              <label class="modulex-c7__label" for="c7-{{id}}-email">{{emailLabel}}</label>
+              <input class="modulex-c7__input" id="c7-{{id}}-email" name="email" type="email" autocomplete="email" inputmode="email" required aria-describedby="c7-{{id}}-email-err" />
+              <p class="modulex-c7__err" id="c7-{{id}}-email-err"></p>
+            </div>
+          </div>
+          <div class="modulex-c7__row">
+            <div class="modulex-c7__field">
+              <label class="modulex-c7__label" for="c7-{{id}}-phone">{{phoneLabel}} <span class="modulex-c7__opt">({{optionalText}})</span></label>
+              <input class="modulex-c7__input" id="c7-{{id}}-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" dir="ltr" aria-describedby="c7-{{id}}-phone-err" />
+              <p class="modulex-c7__err" id="c7-{{id}}-phone-err"></p>
+            </div>
+            <div class="modulex-c7__field">
+              <label class="modulex-c7__label" for="c7-{{id}}-subject">{{subjectLabel}}</label>
+              <select class="modulex-c7__input modulex-c7__select" id="c7-{{id}}-subject" name="subject" required aria-describedby="c7-{{id}}-subject-err">
+                <option value="">{{subjectPlaceholder}}</option>
+                {{c7subjects}}
+              </select>
+              <p class="modulex-c7__err" id="c7-{{id}}-subject-err"></p>
+            </div>
+          </div>
+          <div class="modulex-c7__field">
+            <label class="modulex-c7__label" for="c7-{{id}}-message">{{messageLabel}}</label>
+            <textarea class="modulex-c7__input modulex-c7__textarea" id="c7-{{id}}-message" name="message" rows="5" required aria-describedby="c7-{{id}}-message-err"></textarea>
+            <p class="modulex-c7__err" id="c7-{{id}}-message-err"></p>
+          </div>
+          <div class="modulex-c7__field modulex-c7__consent">
+            <label class="modulex-c7__check" for="c7-{{id}}-kvkk">
+              <input id="c7-{{id}}-kvkk" name="kvkk" type="checkbox" required aria-describedby="c7-{{id}}-kvkk-err" />
+              <span>{{kvkkText}} {{c7kvkklink}}</span>
+            </label>
+            <p class="modulex-c7__err" id="c7-{{id}}-kvkk-err"></p>
+          </div>
+          <p class="modulex-c7__status" role="status" aria-live="polite"></p>
+          <button type="submit" class="modulex-c7__btn">
+            <span class="material-symbols-outlined" aria-hidden="true">{{c7submiticon}}</span>
+            <span>{{c7submit}}</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script type="application/json" id="c7-{{id}}-veri">{{c7veri}}</script>
+</section>
+
+<style>
+  /* contact-7 — Bölünmüş iletişim (31 Eki 2026, G8-C). Renkler yalnız desing anahtarı; şablon varsayılanları
+     var(--mx-site-*) token'ı ya da token'dan türetilmiş color-mix → koyu mod kendiliğinden. Panel (koyu) için
+     panelbg/paneltext çifti birlikte gelir. */
+  .modulex-c7 {
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    padding-block: clamp(40px, 7vw, 88px);
+    padding-inline: clamp(16px, 4vw, 32px);
+    background: --bgcolor--;
+    color: --textcolor--;
+    overflow: hidden;
+  }
+  .modulex-c7 *,
+  .modulex-c7 *::before,
+  .modulex-c7 *::after { box-sizing: border-box; }
+
+  .modulex-c7__wrap { position: relative; max-width: --max--; margin-inline: auto; }
+
+  .modulex-c7__head { margin-block-end: 32px; text-align: start; max-width: 64ch; }
+  .modulex-c7__title { margin: 0 0 10px; font-size: clamp(1.7rem, 1.2rem + 1.8vw, 2.6rem); line-height: 1.15; color: --textcolor--; }
+  .modulex-c7__desc { margin: 0; color: --mutedcolor--; font-size: 1.05rem; line-height: 1.7; }
+
+  /* --- iki sütun --- */
+  .modulex-c7__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    border-radius: --radius--;
+    overflow: hidden;
+    box-shadow: 0 18px 50px -24px rgba(0, 0, 0, 0.35);
+  }
+
+  .modulex-c7__panel {
+    padding: clamp(24px, 3.5vw, 44px);
+    background: --panelbg--;
+    color: --paneltext--;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .modulex-c7__ptitle { margin: 0; font-size: 1.35rem; line-height: 1.3; color: --paneltext--; }
+  .modulex-c7__ptext { margin: 0; color: --panelmuted--; line-height: 1.65; }
+
+  .modulex-c7__items { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 16px; }
+  .modulex-c7__item { display: flex; align-items: flex-start; gap: 14px; min-width: 0; }
+  .modulex-c7__icon {
+    flex: 0 0 auto;
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 44px; height: 44px; border-radius: 12px;
+    background: color-mix(in srgb, --paneltext-- 12%, transparent);
+    color: --paneltext--;
+  }
+  .modulex-c7__icon .material-symbols-outlined { font-size: 22px; }
+  .modulex-c7__ilabel { display: block; font-size: 0.8rem; letter-spacing: 0.04em; text-transform: uppercase; color: --panelmuted--; margin-block-end: 2px; }
+  .modulex-c7__ivalue { font-size: 1rem; line-height: 1.5; overflow-wrap: anywhere; color: --paneltext--; }
+  .modulex-c7__panel a.modulex-c7__ivalue:link,
+  .modulex-c7__panel a.modulex-c7__ivalue:visited { color: --paneltext--; text-decoration: none; border-block-end: 1px solid transparent; transition: border-color 0.2s ease; }
+  .modulex-c7__panel a.modulex-c7__ivalue:hover,
+  .modulex-c7__panel a.modulex-c7__ivalue:focus-visible { border-block-end-color: --paneltext--; }
+
+  .modulex-c7__panel a.modulex-c7__maplink:link,
+  .modulex-c7__panel a.modulex-c7__maplink:visited {
+    display: inline-flex; align-items: center; gap: 8px; align-self: flex-start;
+    min-height: 44px; padding-inline: 16px; border-radius: 999px;
+    border: 1px solid color-mix(in srgb, --paneltext-- 35%, transparent);
+    color: --paneltext--; text-decoration: none; font-weight: 500;
+    transition: background-color 0.2s ease;
+  }
+  .modulex-c7__panel a.modulex-c7__maplink:hover,
+  .modulex-c7__panel a.modulex-c7__maplink:focus-visible { background: color-mix(in srgb, --paneltext-- 14%, transparent); }
+  [dir="rtl"] .modulex-c7__maplink .material-symbols-outlined { transform: scaleX(-1); }
+
+  .modulex-c7__stitle { margin: 0 0 8px; font-size: 0.8rem; letter-spacing: 0.04em; text-transform: uppercase; color: --panelmuted--; }
+  .modulex-c7__tail { display: flex; flex-direction: column; gap: 20px; margin-block-start: auto; }
+  .modulex-c7__tail:empty { display: none; }
+  .modulex-c7__social { display: flex; flex-wrap: wrap; gap: 8px; }
+  .modulex-c7__panel a.modulex-c7__chip:link,
+  .modulex-c7__panel a.modulex-c7__chip:visited {
+    display: inline-flex; align-items: center; gap: 6px;
+    min-height: 44px; padding-inline: 14px; border-radius: 999px;
+    background: color-mix(in srgb, --paneltext-- 10%, transparent);
+    color: --paneltext--; text-decoration: none; font-size: 0.92rem;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+  }
+  .modulex-c7__panel a.modulex-c7__chip:hover,
+  .modulex-c7__panel a.modulex-c7__chip:focus-visible { background: color-mix(in srgb, --paneltext-- 22%, transparent); transform: translateY(-2px); }
+  .modulex-c7__chip .material-symbols-outlined { font-size: 18px; }
+
+  /* --- form --- */
+  .modulex-c7__formcard { padding: clamp(24px, 3.5vw, 44px); background: --surface--; color: --textcolor--; }
+  .modulex-c7__ftitle { margin: 0 0 20px; font-size: 1.35rem; line-height: 1.3; color: --textcolor--; }
+  .modulex-c7__form { display: flex; flex-direction: column; gap: 16px; }
+  .modulex-c7__row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+  .modulex-c7__field { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+  .modulex-c7__label { font-size: 0.92rem; font-weight: 600; color: --textcolor--; }
+  .modulex-c7__opt { font-weight: 400; color: --mutedcolor--; }
+  .modulex-c7__input {
+    width: 100%; min-height: 48px; padding: 12px 14px;
+    border: 1px solid --bordercolor--; border-radius: calc(--radius-- * 0.6);
+    background: --bgcolor--; color: --textcolor--;
+    font: inherit; font-size: 1rem; line-height: 1.4;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+  .modulex-c7__input:focus-visible { outline: none; border-color: --accent--; box-shadow: 0 0 0 3px color-mix(in srgb, --accent-- 25%, transparent); }
+  .modulex-c7__input[aria-invalid="true"] { border-color: --errcolor--; }
+  .modulex-c7__select { appearance: none; padding-inline-end: 40px; background-image: linear-gradient(45deg, transparent 50%, currentColor 50%), linear-gradient(135deg, currentColor 50%, transparent 50%); background-position: calc(100% - 20px) 55%, calc(100% - 14px) 55%; background-size: 6px 6px; background-repeat: no-repeat; }
+  [dir="rtl"] .modulex-c7__select { background-position: 20px 55%, 14px 55%; }
+  .modulex-c7__textarea { resize: vertical; min-height: 130px; }
+
+  .modulex-c7__check { display: flex; align-items: flex-start; gap: 12px; cursor: pointer; font-size: 0.92rem; line-height: 1.55; color: --mutedcolor--; }
+  .modulex-c7__check input { flex: 0 0 auto; width: 22px; height: 22px; margin: 2px 0 0; accent-color: --accent--; cursor: pointer; }
+  .modulex-c7__check a:link,
+  .modulex-c7__check a:visited { color: --textcolor--; text-decoration: underline; }
+
+  .modulex-c7__err { display: none; margin: 0; font-size: 0.85rem; color: --errcolor--; align-items: center; gap: 4px; }
+  .modulex-c7__err.is-on { display: flex; }
+  .modulex-c7__err::before { content: "error"; font-family: "Material Symbols Outlined"; font-size: 16px; line-height: 1; }
+  .modulex-c7__status { display: none; margin: 0; padding: 12px 14px; border-radius: calc(--radius-- * 0.6); font-size: 0.92rem; line-height: 1.5; background: color-mix(in srgb, --accent-- 12%, transparent); color: --textcolor--; }
+  .modulex-c7__status.is-on { display: block; }
+  .modulex-c7__status.is-err { background: color-mix(in srgb, --errcolor-- 12%, transparent); }
+
+  .modulex-c7__btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 10px; align-self: flex-start;
+    min-height: 50px; padding-inline: 26px; border: 0; border-radius: 999px;
+    background: --accent--; color: --accentText--;
+    font: inherit; font-size: 1rem; font-weight: 600; cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+  }
+  .modulex-c7__btn:hover { transform: translateY(-2px); box-shadow: 0 10px 24px -12px --accent--; }
+  .modulex-c7__btn:focus-visible { outline: 3px solid --accent--; outline-offset: 3px; }
+  .modulex-c7__btn:active { transform: translateY(0); }
+  [dir="rtl"] .modulex-c7__btn .material-symbols-outlined { transform: scaleX(-1); }
+
+  /* === VARYANT: kart-ustte — bilgi kartları formun üstünde yatay, form tam genişlik === */
+  .modulex-c7--kart-ustte .modulex-c7__grid { display: flex; flex-direction: column; gap: 24px; box-shadow: none; border-radius: 0; overflow: visible; }
+  .modulex-c7--kart-ustte .modulex-c7__panel { padding: 0; background: transparent; color: --textcolor--; gap: 16px; }
+  .modulex-c7--kart-ustte .modulex-c7__ptitle,
+  .modulex-c7--kart-ustte .modulex-c7__ptext { display: none; }
+  .modulex-c7--kart-ustte .modulex-c7__items { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+  .modulex-c7--kart-ustte .modulex-c7__item {
+    flex-direction: column; gap: 12px; padding: 22px 20px;
+    background: --surface--; border: 1px solid --bordercolor--; border-radius: --radius--;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .modulex-c7--kart-ustte .modulex-c7__item:hover { transform: translateY(-4px); box-shadow: 0 16px 36px -22px rgba(0, 0, 0, 0.4); }
+  .modulex-c7--kart-ustte .modulex-c7__icon { background: --accent--; color: --accentText--; }
+  .modulex-c7--kart-ustte .modulex-c7__ilabel { color: --mutedcolor--; }
+  .modulex-c7--kart-ustte .modulex-c7__ivalue,
+  .modulex-c7--kart-ustte .modulex-c7__panel a.modulex-c7__ivalue:link,
+  .modulex-c7--kart-ustte .modulex-c7__panel a.modulex-c7__ivalue:visited { color: --textcolor--; }
+  .modulex-c7--kart-ustte .modulex-c7__panel a.modulex-c7__ivalue:hover { border-block-end-color: --textcolor--; }
+  .modulex-c7--kart-ustte .modulex-c7__tail { flex-direction: row; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; margin: 0; }
+  .modulex-c7--kart-ustte .modulex-c7__panel a.modulex-c7__maplink:link,
+  .modulex-c7--kart-ustte .modulex-c7__panel a.modulex-c7__maplink:visited { color: --textcolor--; border-color: --bordercolor--; }
+  .modulex-c7--kart-ustte .modulex-c7__panel a.modulex-c7__maplink:hover { background: color-mix(in srgb, --textcolor-- 8%, transparent); }
+  .modulex-c7--kart-ustte .modulex-c7__stitle { display: none; }
+  .modulex-c7--kart-ustte .modulex-c7__social { margin: 0; }
+  .modulex-c7--kart-ustte .modulex-c7__panel a.modulex-c7__chip:link,
+  .modulex-c7--kart-ustte .modulex-c7__panel a.modulex-c7__chip:visited { color: --textcolor--; background: --surface--; border: 1px solid --bordercolor--; }
+  .modulex-c7--kart-ustte .modulex-c7__panel a.modulex-c7__chip:hover { background: color-mix(in srgb, --accent-- 14%, transparent); }
+  .modulex-c7--kart-ustte .modulex-c7__formcard { border: 1px solid --bordercolor--; border-radius: --radius--; }
+  .modulex-c7--kart-ustte .modulex-c7__btn { align-self: flex-end; }
+
+  /* === VARYANT: harita-arka — iframe/yer tutucu arka plan, panel ve form yüzen kartlar === */
+  .modulex-c7__map { position: absolute; inset: 0; z-index: 0; }
+  .modulex-c7__map iframe { display: block; width: 100%; height: 100%; border: 0; filter: saturate(0.6); }
+  .modulex-c7__mapph {
+    width: 100%; height: 100%;
+    display: flex; align-items: center; justify-content: center;
+    background:
+      radial-gradient(circle at 30% 40%, color-mix(in srgb, --accent-- 22%, transparent), transparent 45%),
+      repeating-linear-gradient(0deg, color-mix(in srgb, --textcolor-- 7%, transparent) 0 1px, transparent 1px 48px),
+      repeating-linear-gradient(90deg, color-mix(in srgb, --textcolor-- 7%, transparent) 0 1px, transparent 1px 48px),
+      --surface--;
+  }
+  .modulex-c7__mapph .material-symbols-outlined { font-size: 72px; color: --accent--; opacity: 0.8; }
+  .modulex-c7__map::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to bottom, --bgcolor-- 0%, transparent 35%, transparent 70%, --bgcolor-- 100%); opacity: 0.85; pointer-events: none; }
+  .modulex-c7--harita-arka .modulex-c7__head { padding: 18px 22px; background: color-mix(in srgb, --bgcolor-- 86%, transparent); border-radius: --radius--; backdrop-filter: blur(6px); display: inline-block; }
+  .modulex-c7--harita-arka .modulex-c7__grid { gap: 24px; box-shadow: none; border-radius: 0; overflow: visible; align-items: start; }
+  .modulex-c7--harita-arka .modulex-c7__panel,
+  .modulex-c7--harita-arka .modulex-c7__formcard { border-radius: --radius--; box-shadow: 0 24px 60px -28px rgba(0, 0, 0, 0.5); }
+  .modulex-c7--harita-arka .modulex-c7__formcard { border: 1px solid --bordercolor--; }
+
+  /* --- giriş animasyonu: yalnız JS varsa gizlenir (IntersectionObserver) --- */
+  .modulex-c7[data-c7-anim] .modulex-c7__panel,
+  .modulex-c7[data-c7-anim] .modulex-c7__formcard,
+  .modulex-c7[data-c7-anim] .modulex-c7__head { opacity: 0; transform: translateY(16px); transition: opacity 0.3s ease, transform 0.3s ease; }
+  .modulex-c7[data-c7-anim] .modulex-c7__formcard { transition-delay: 0.08s; }
+  .modulex-c7.is-in .modulex-c7__panel,
+  .modulex-c7.is-in .modulex-c7__formcard,
+  .modulex-c7.is-in .modulex-c7__head { opacity: 1; transform: none; }
+
+  @media (max-width: 1024px) {
+    .modulex-c7--kart-ustte .modulex-c7__items { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (max-width: 768px) {
+    .modulex-c7__grid { grid-template-columns: minmax(0, 1fr); }
+    .modulex-c7__row { grid-template-columns: minmax(0, 1fr); }
+    .modulex-c7__btn { align-self: stretch; }
+    .modulex-c7--kart-ustte .modulex-c7__btn { align-self: stretch; }
+    .modulex-c7--harita-arka .modulex-c7__head { display: block; }
+    [class*="modulex"] { max-width: 100%; box-sizing: border-box; }
+  }
+  @media (max-width: 480px) {
+    .modulex-c7--kart-ustte .modulex-c7__items { grid-template-columns: minmax(0, 1fr); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .modulex-c7 *, .modulex-c7 *::before, .modulex-c7 *::after { animation: none !important; transition: none !important; }
+    .modulex-c7[data-c7-anim] .modulex-c7__panel,
+    .modulex-c7[data-c7-anim] .modulex-c7__formcard,
+    .modulex-c7[data-c7-anim] .modulex-c7__head { opacity: 1; transform: none; }
+  }
+</style>
+
+<script>
+  (function () {
+    var kok = document.getElementById("c7-{{id}}");
+    if (!kok || kok.getAttribute("data-c7-hazir") === "1") { return; }
+    kok.setAttribute("data-c7-hazir", "1");
+    var veri = {};
+    try { veri = JSON.parse(document.getElementById("c7-{{id}}-veri").textContent); } catch (e) { veri = {}; }
+    var m = veri.m || {};
+
+    /* giriş animasyonu — IO yoksa içerik görünür kalır */
+    if (window.IntersectionObserver && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      kok.setAttribute("data-c7-anim", "1");
+      var io = new IntersectionObserver(function (girisler) {
+        for (var i = 0; i < girisler.length; i++) {
+          if (girisler[i].isIntersecting) { kok.classList.add("is-in"); io.disconnect(); }
+        }
+      }, { threshold: 0.12 });
+      io.observe(kok);
+    }
+
+    var form = kok.querySelector("form");
+    if (!form) { return; }
+    var durum = kok.querySelector(".modulex-c7__status");
+
+    function alan(ad) { return form.elements[ad] || null; }
+    function hataYaz(el, metin) {
+      if (!el) { return; }
+      var id = el.getAttribute("aria-describedby");
+      var p = id ? document.getElementById(id) : null;
+      if (p) { p.textContent = metin || ""; if (metin) { p.classList.add("is-on"); } else { p.classList.remove("is-on"); } }
+      if (metin) { el.setAttribute("aria-invalid", "true"); } else { el.removeAttribute("aria-invalid"); }
+    }
+    function deger(ad) { var el = alan(ad); return el ? String(el.value || "").trim() : ""; }
+    function dogrula() {
+      var ilkHata = null;
+      var kontrol = [
+        ["name", deger("name") ? "" : m.required],
+        ["email", !deger("email") ? m.required : (/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(deger("email")) ? "" : m.email)],
+        ["phone", deger("phone") && deger("phone").replace(/\D/g, "").length < 7 ? m.phone : ""],
+        ["subject", deger("subject") ? "" : m.required],
+        ["message", deger("message") ? "" : m.required],
+        ["kvkk", alan("kvkk") && alan("kvkk").checked ? "" : m.kvkk]
+      ];
+      for (var i = 0; i < kontrol.length; i++) {
+        hataYaz(alan(kontrol[i][0]), kontrol[i][1]);
+        if (kontrol[i][1] && !ilkHata) { ilkHata = alan(kontrol[i][0]); }
+      }
+      return ilkHata;
+    }
+    function durumYaz(metin, hata) {
+      if (!durum) { return; }
+      durum.textContent = metin || "";
+      durum.className = "modulex-c7__status" + (metin ? " is-on" : "") + (hata ? " is-err" : "");
+    }
+    var alanlar = ["name", "email", "phone", "subject", "message", "kvkk"];
+    for (var a = 0; a < alanlar.length; a++) {
+      var el = alan(alanlar[a]);
+      if (el) { el.addEventListener("input", function (ev) { hataYaz(ev.target, ""); durumYaz("", false); }); el.addEventListener("change", function (ev) { hataYaz(ev.target, ""); }); }
+    }
+
+    form.addEventListener("submit", function (ev) {
+      ev.preventDefault();
+      var ilk = dogrula();
+      if (ilk) { durumYaz(m.summary, true); try { ilk.focus(); } catch (e) { /* odak verilemedi */ } return; }
+      var sec = alan("subject");
+      var konuMetin = sec && sec.selectedIndex > -1 ? String(sec.options[sec.selectedIndex].text || "").trim() : "";
+      var satirlar = [];
+      if (veri.gonderim === "whatsapp" && veri.waIntro) { satirlar.push(veri.waIntro, ""); }
+      satirlar.push((m.name || "") + ": " + deger("name"));
+      satirlar.push((m.emailL || "") + ": " + deger("email"));
+      if (deger("phone")) { satirlar.push((m.phoneL || "") + ": " + deger("phone")); }
+      satirlar.push((m.subjectL || "") + ": " + konuMetin);
+      satirlar.push("", deger("message"));
+      var govde = satirlar.join("\n");
+      if (veri.gonderim === "whatsapp" && veri.wa) {
+        durumYaz(m.okWa, false);
+        window.location.href = "https://wa.me/" + veri.wa + "?text=" + encodeURIComponent(govde);
+      } else {
+        var konu = (veri.subject || "") + (konuMetin ? " - " + konuMetin : "");
+        durumYaz(m.ok, false);
+        window.location.href = "mailto:" + (veri.mailto || "") + "?subject=" + encodeURIComponent(konu) + "&body=" + encodeURIComponent(govde.replace(/\n/g, "\r\n"));
+      }
+    });
+  })();
+</script>

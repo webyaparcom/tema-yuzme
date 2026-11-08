@@ -1,0 +1,499 @@
+<section class="modulex-ilan" id="modulex-ilan-{{id}}" aria-labelledby="modulex-ilan-{{id}}-h">
+  <div class="modulex-ilan-wrap">
+    <header class="modulex-ilan-head">
+      <h2 class="modulex-ilan-h" id="modulex-ilan-{{id}}-h">{{title}}</h2>
+      <p class="modulex-ilan-sub">{{subtitle}}</p>
+    </header>
+
+    <div class="modulex-ilan-bar">
+      <div class="modulex-ilan-tabs" role="group" aria-label="{{dealGroupLabel}}">
+        <button type="button" class="modulex-ilan-tab is-on" data-ilan-deal="" aria-pressed="true">{{dealAll}}<span class="modulex-ilan-tabn" data-ilan-count="deal:"></span></button>
+        <button type="button" class="modulex-ilan-tab" data-ilan-deal="sale" aria-pressed="false">{{dealSale}}<span class="modulex-ilan-tabn" data-ilan-count="deal:sale"></span></button>
+        <button type="button" class="modulex-ilan-tab" data-ilan-deal="rent" aria-pressed="false">{{dealRent}}<span class="modulex-ilan-tabn" data-ilan-count="deal:rent"></span></button>
+      </div>
+      <div class="modulex-ilan-tools">
+        <label class="modulex-ilan-search">
+          <span class="modulex-ilan-vh">{{searchLabel}}</span>
+          <span class="material-symbols-outlined" aria-hidden="true">search</span>
+          <input type="search" data-ilan-q placeholder="{{searchPlaceholder}}" autocomplete="off" />
+        </label>
+        <label class="modulex-ilan-sort">
+          <span class="modulex-ilan-sortl">{{sortLabel}}</span>
+          <select class="modulex-ilan-select" data-ilan-sort>{{ilanSortOptions}}</select>
+        </label>
+        <button type="button" class="modulex-ilan-toggle" data-ilan-toggle aria-expanded="false" aria-controls="modulex-ilan-{{id}}-panel">
+          <span class="material-symbols-outlined" aria-hidden="true">tune</span>
+          <span>{{filtersTitle}}</span>
+          <span class="modulex-ilan-badge" data-ilan-active hidden></span>
+        </button>
+      </div>
+    </div>
+
+    <div class="modulex-ilan-layout">
+      <aside class="modulex-ilan-panel" id="modulex-ilan-{{id}}-panel" aria-label="{{filtersTitle}}">
+        <div class="modulex-ilan-panelhead">
+          <h3 class="modulex-ilan-ph3">{{filtersTitle}}</h3>
+          <button type="button" class="modulex-ilan-reset" data-ilan-reset>{{resetFilters}}</button>
+        </div>
+        {{ilanSecType}}
+        {{ilanSecRooms}}
+        {{ilanSecM2}}
+        {{ilanSecPrice}}
+        {{ilanSecDistrict}}
+      </aside>
+
+      <div class="modulex-ilan-main">
+        <p class="modulex-ilan-status" role="status" aria-live="polite" data-ilan-status></p>
+        <p class="modulex-ilan-demo"><span class="material-symbols-outlined" aria-hidden="true">info</span><span>{{demoNote}}</span></p>
+        <div class="modulex-ilan-list" data-ilan-list>{{ilanCards}}</div>
+        <div class="modulex-ilan-empty" data-ilan-empty hidden>
+          <span class="material-symbols-outlined" aria-hidden="true">search_off</span>
+          <h3 class="modulex-ilan-eh">{{noResultTitle}}</h3>
+          <p>{{noResultText}}</p>
+          <button type="button" class="modulex-ilan-btn" data-ilan-reset>{{resetFilters}}</button>
+        </div>
+        <nav class="modulex-ilan-pages" aria-label="{{pagesLabel}}" data-ilan-pages hidden></nav>
+      </div>
+    </div>
+    <script type="application/json" id="modulex-ilan-{{id}}-veri">{{ilanJson}}</script>
+  </div>
+</section>
+<noscript><style>.modulex-ilan-card[hidden]{display:flex}.modulex-ilan-toggle{display:none}.modulex-ilan-panel{display:none}</style></noscript>
+
+<style>
+  .modulex-ilan {
+    box-sizing: border-box;
+    width: 100%;
+    background: --bgcolor--;
+    color: --textcolor--;
+    padding-block: 48px;
+    overflow-x: clip;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  .modulex-ilan *, .modulex-ilan *::before, .modulex-ilan *::after { box-sizing: border-box; }
+  /* Ham css.css her ögeye font-size:14px / weight:400 / line-height:1.2 yazar (* kuralı) → iç ögeler üst değeri miras alsın */
+  .modulex-ilan :where(*) { font-size: inherit; font-weight: inherit; line-height: inherit; }
+  .modulex-ilan .material-symbols-outlined { font-size: 20px; line-height: 1; font-weight: 400; }
+  /* Ham css.css a:link/visited rengi #000 (özgüllük 0,1,1) → bağlantı rengi burada açıkça miras alınır */
+  .modulex-ilan a.modulex-ilan-link:link, .modulex-ilan a.modulex-ilan-link:visited,
+  .modulex-ilan a.modulex-ilan-link:hover, .modulex-ilan a.modulex-ilan-link:active { color: inherit; }
+  .modulex-ilan-wrap { max-width: --max--; margin-inline: auto; padding-inline: 20px; }
+  .modulex-ilan-head { margin-block-end: 24px; }
+  .modulex-ilan-h { margin: 0 0 8px; font-size: 2rem; font-weight: 800; line-height: 1.2; color: --textcolor--; }
+  .modulex-ilan-sub { margin: 0; color: --mutedcolor--; font-size: 1.05rem; }
+  .modulex-ilan-vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+
+  .modulex-ilan button, .modulex-ilan select, .modulex-ilan input { font: inherit; color: inherit; }
+  .modulex-ilan button, .modulex-ilan label, .modulex-ilan select { cursor: pointer; }
+  .modulex-ilan :focus-visible { outline: 2px solid --accent--; outline-offset: 2px; }
+
+  /* ---- üst çubuk: sekmeler + araçlar ---- */
+  .modulex-ilan-bar { display: flex; flex-wrap: wrap; gap: 12px 16px; align-items: center; justify-content: space-between; margin-block-end: 24px; }
+  .modulex-ilan-tabs { display: inline-flex; gap: 4px; padding: 4px; background: --surface--; border: 1px solid --bordercolor--; border-radius: 999px; }
+  .modulex-ilan-tab {
+    display: inline-flex; align-items: center; gap: 8px; min-height: 44px; min-width: 88px; justify-content: center;
+    padding-inline: 18px; border: 0; border-radius: 999px; background: transparent; font-weight: 600;
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+  .modulex-ilan-tab:hover { background: --surface2--; }
+  .modulex-ilan-tab.is-on { background: --accent--; color: --accentText--; }
+  .modulex-ilan-tabn { font-size: 0.8rem; font-weight: 600; opacity: 0.8; }
+  .modulex-ilan-tabn:empty { display: none; }
+
+  .modulex-ilan-tools { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; flex: 1 1 360px; justify-content: flex-end; }
+  .modulex-ilan-search {
+    position: relative; display: flex; align-items: center; flex: 1 1 220px; max-width: 360px; min-height: 44px;
+    background: --surface--; border: 1px solid --bordercolor--; border-radius: 12px; padding-inline: 12px; gap: 8px;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  }
+  .modulex-ilan-search:focus-within { border-color: --accent--; box-shadow: 0 0 0 3px color-mix(in srgb, --accent-- 25%, transparent); }
+  .modulex-ilan-search input { flex: 1; min-width: 0; border: 0; background: transparent; min-height: 42px; outline: none; }
+  .modulex-ilan-search .material-symbols-outlined { color: --mutedcolor--; }
+  .modulex-ilan-sort { display: inline-flex; align-items: center; gap: 8px; }
+  .modulex-ilan-sortl { color: --mutedcolor--; font-size: 0.9rem; }
+  .modulex-ilan-select {
+    min-height: 44px; max-width: 100%; padding-inline: 12px; background: --surface--; color: --textcolor--;
+    border: 1px solid --bordercolor--; border-radius: 12px;
+  }
+  .modulex-ilan-toggle {
+    display: none; align-items: center; gap: 8px; min-height: 44px; min-width: 44px; padding-inline: 16px;
+    background: --surface--; border: 1px solid --bordercolor--; border-radius: 12px; font-weight: 600;
+  }
+  .modulex-ilan-badge {
+    display: inline-flex; align-items: center; justify-content: center; min-width: 22px; height: 22px; padding-inline: 6px;
+    border-radius: 999px; background: --accent--; color: --accentText--; font-size: 0.75rem;
+  }
+  .modulex-ilan-badge[hidden] { display: none; }
+
+  /* ---- düzen ---- */
+  .modulex-ilan-layout { display: grid; grid-template-columns: 280px minmax(0, 1fr); gap: 28px; align-items: start; }
+  .modulex-ilan-panel {
+    position: sticky; inset-block-start: 16px; padding: 18px; background: --surface--;
+    border: 1px solid --bordercolor--; border-radius: 16px;
+  }
+  .modulex-ilan-panelhead { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-block-end: 8px; }
+  .modulex-ilan-ph3 { margin: 0; font-size: 1.05rem; font-weight: 700; }
+  .modulex-ilan-reset {
+    min-height: 44px; padding-inline: 10px; border: 0; background: transparent; color: --accent--; font-weight: 600;
+    text-decoration: underline; text-underline-offset: 3px;
+  }
+  .modulex-ilan-sec { margin: 0; padding: 14px 0; border-block-start: 1px solid --bordercolor--; min-width: 0; }
+  .modulex-ilan-leg { margin-block-end: 8px; font-weight: 700; font-size: 0.95rem; }
+  .modulex-ilan-opts { display: flex; flex-direction: column; gap: 2px; }
+  .modulex-ilan-opt { display: flex; align-items: center; gap: 10px; min-height: 44px; padding-inline: 6px; border-radius: 8px; transition: background-color 0.2s ease; }
+  .modulex-ilan-opt:hover { background: --surface2--; }
+  .modulex-ilan-opt input { width: 20px; height: 20px; margin: 0; accent-color: --accent--; flex: none; }
+  .modulex-ilan-opt-t { flex: 1; }
+  .modulex-ilan-opt-n { color: --mutedcolor--; font-size: 0.85rem; }
+  .modulex-ilan-opt-n::before { content: "("; }
+  .modulex-ilan-opt-n::after { content: ")"; }
+  .modulex-ilan-opt-n:empty { display: none; }
+  .modulex-ilan-opt.is-zero { opacity: 0.55; }
+  .modulex-ilan-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .modulex-ilan-opt-chip { position: relative; padding: 0; min-width: 52px; min-height: 44px; justify-content: center; border: 1px solid --bordercolor--; border-radius: 10px; background: --bgcolor--; }
+  .modulex-ilan-opt-chip input { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer; }
+  .modulex-ilan-opt-chip .modulex-ilan-opt-t { flex: none; padding-inline: 12px; font-weight: 600; pointer-events: none; }
+  .modulex-ilan-opt-chip:has(input:checked) { background: --accent--; color: --accentText--; border-color: --accent--; }
+  .modulex-ilan-opt-chip:has(input:focus-visible) { outline: 2px solid --accent--; outline-offset: 2px; }
+  .modulex-ilan-range { display: flex; align-items: center; gap: 8px; }
+  .modulex-ilan-range label { flex: 1; min-width: 0; }
+  .modulex-ilan-range input {
+    width: 100%; min-height: 44px; padding-inline: 10px; background: --bgcolor--; color: --textcolor--;
+    border: 1px solid --bordercolor--; border-radius: 10px; text-align: start;
+  }
+  .modulex-ilan-dash { color: --mutedcolor--; }
+  .modulex-ilan-sec .modulex-ilan-select { width: 100%; }
+
+  /* ---- sonuç alanı ---- */
+  .modulex-ilan-status { margin: 0 0 6px; font-weight: 700; font-size: 1.05rem; }
+  .modulex-ilan-demo { display: flex; align-items: flex-start; gap: 8px; margin: 0 0 18px; color: --mutedcolor--; font-size: 0.9rem; }
+  .modulex-ilan-demo .material-symbols-outlined { flex: none; }
+  .modulex-ilan-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; }
+  .modulex-ilan-list[hidden] { display: none; }
+
+  .modulex-ilan-card {
+    position: relative; display: flex; flex-direction: column; min-width: 0; overflow: hidden;
+    background: --bgcolor--; border: 1px solid --bordercolor--; border-radius: 16px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    animation: modulexIlanIn 0.35s ease both;
+  }
+  .modulex-ilan-card[hidden] { display: none; }
+  .modulex-ilan-card:hover, .modulex-ilan-card:focus-within { transform: translateY(-3px); box-shadow: 0 12px 28px color-mix(in srgb, --textcolor-- 14%, transparent); border-color: --accent--; }
+  @keyframes modulexIlanIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+  .modulex-ilan-media { position: relative; aspect-ratio: 4 / 3; background: --surface2--; overflow: hidden; }
+  .modulex-ilan-media img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+  .modulex-ilan-card:hover .modulex-ilan-media img { transform: scale(1.04); }
+  .modulex-ilan-ph { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: --mutedcolor--; background: linear-gradient(135deg, --surface--, --surface2--); }
+  .modulex-ilan .modulex-ilan-ph .material-symbols-outlined { font-size: 56px; opacity: 0.7; }
+  .modulex-ilan-badges { position: absolute; inset-block-start: 10px; inset-inline-start: 10px; display: flex; gap: 6px; flex-wrap: wrap; }
+  .modulex-ilan-deal, .modulex-ilan-flag { padding: 4px 10px; border-radius: 999px; font-size: 0.8rem; font-weight: 700; line-height: 1.4; }
+  .modulex-ilan-deal-sale { background: --accent--; color: --accentText--; }
+  .modulex-ilan-deal-rent { background: --textcolor--; color: --bgcolor--; }
+  .modulex-ilan-flag { background: --bgcolor--; color: --textcolor--; border: 1px solid --bordercolor--; }
+  .modulex-ilan-count {
+    position: absolute; inset-block-end: 10px; inset-inline-end: 10px; display: inline-flex; align-items: center; gap: 4px;
+    padding: 3px 10px; border-radius: 999px; font-size: 0.8rem; background: color-mix(in srgb, --textcolor-- 82%, transparent); color: --bgcolor--;
+  }
+  .modulex-ilan .modulex-ilan-count .material-symbols-outlined { font-size: 16px; }
+  .modulex-ilan-body { display: flex; flex-direction: column; gap: 8px; padding: 16px; flex: 1; }
+  .modulex-ilan-price { margin: 0; font-size: 1.35rem; font-weight: 800; color: --textcolor--; }
+  .modulex-ilan-per { font-size: 0.9rem; font-weight: 500; color: --mutedcolor--; }
+  .modulex-ilan-title { margin: 0; font-size: 1.05rem; line-height: 1.35; font-weight: 700; overflow-wrap: anywhere; }
+  .modulex-ilan-link { color: inherit; text-decoration: none; }
+  .modulex-ilan-link::after { content: ""; position: absolute; inset: 0; }
+  .modulex-ilan-link:hover { text-decoration: underline; }
+  .modulex-ilan-loc { display: flex; align-items: center; gap: 4px; margin: 0; color: --mutedcolor--; font-size: 0.92rem; }
+  .modulex-ilan .modulex-ilan-loc .material-symbols-outlined, .modulex-ilan .modulex-ilan-meta .material-symbols-outlined { font-size: 18px; flex: none; }
+  .modulex-ilan-meta { display: flex; flex-wrap: wrap; gap: 6px 14px; list-style: none; margin: 0; padding: 0; font-size: 0.92rem; }
+  .modulex-ilan-meta li { display: inline-flex; align-items: center; gap: 4px; }
+  .modulex-ilan-foot { display: flex; flex-direction: column; gap: 4px; margin: auto 0 0; padding-block-start: 10px; border-block-start: 1px dashed --bordercolor--; font-size: 0.85rem; color: --mutedcolor--; }
+  .modulex-ilan-permit { display: flex; align-items: flex-start; gap: 6px; }
+  .modulex-ilan .modulex-ilan-permit .material-symbols-outlined { font-size: 18px; flex: none; color: --accent--; }
+  .modulex-ilan-permitno { font-weight: 700; color: --textcolor--; white-space: nowrap; }
+
+  .modulex-ilan-empty { text-align: center; padding: 48px 16px; border: 1px dashed --bordercolor--; border-radius: 16px; background: --surface--; }
+  .modulex-ilan-empty[hidden] { display: none; }
+  .modulex-ilan .modulex-ilan-empty .material-symbols-outlined { font-size: 48px; color: --mutedcolor--; }
+  .modulex-ilan-eh { margin: 8px 0; font-size: 1.2rem; }
+  .modulex-ilan-empty p { margin: 0 0 16px; color: --mutedcolor--; }
+  .modulex-ilan-btn {
+    min-height: 44px; min-width: 140px; padding-inline: 20px; border: 0; border-radius: 12px; background: --accent--; color: --accentText--; font-weight: 700;
+    transition: filter 0.2s ease;
+  }
+  .modulex-ilan-btn:hover { filter: brightness(1.08); }
+
+  .modulex-ilan-pages { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; margin-block-start: 28px; }
+  .modulex-ilan-pages[hidden] { display: none; }
+  .modulex-ilan-pg {
+    display: inline-flex; align-items: center; justify-content: center; min-width: 44px; min-height: 44px; padding-inline: 10px;
+    border: 1px solid --bordercolor--; border-radius: 10px; background: --bgcolor--; font-weight: 600;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+  .modulex-ilan-pg:hover:not(:disabled) { background: --surface2--; }
+  .modulex-ilan-pg[aria-current="page"] { background: --accent--; color: --accentText--; border-color: --accent--; }
+  .modulex-ilan-pg:disabled { opacity: 0.45; cursor: not-allowed; }
+  .modulex-ilan-gap { align-self: center; color: --mutedcolor--; }
+
+  /* ---- mobil: filtre paneli açılır-kapanır (accordion) ---- */
+  @media (max-width: 1024px) {
+    .modulex-ilan-layout { grid-template-columns: 220px minmax(0, 1fr); gap: 20px; }
+  }
+  @media (max-width: 768px) {
+    .modulex-ilan { padding-block: 32px; }
+    .modulex-ilan-h { font-size: 1.5rem; }
+    .modulex-ilan-wrap { padding-inline: 14px; }
+    .modulex-ilan-layout { grid-template-columns: minmax(0, 1fr); }
+    .modulex-ilan-bar { flex-direction: column; align-items: stretch; }
+    .modulex-ilan-tabs { display: flex; }
+    .modulex-ilan-tab { flex: 1; min-width: 0; padding-inline: 8px; }
+    .modulex-ilan-tools { flex-direction: column; align-items: stretch; flex: none; }
+    .modulex-ilan-search { max-width: none; flex: none; }
+    .modulex-ilan-sort { justify-content: space-between; }
+    .modulex-ilan-sort .modulex-ilan-select { flex: 1; }
+    .modulex-ilan-toggle { display: inline-flex; justify-content: center; }
+    .modulex-ilan-panel { display: none; position: static; }
+    .modulex-ilan-panel.is-open { display: block; animation: modulexIlanOpen 0.3s ease both; }
+    @keyframes modulexIlanOpen { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: none; } }
+    .modulex-ilan-list { grid-template-columns: minmax(0, 1fr); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .modulex-ilan *, .modulex-ilan *::before, .modulex-ilan *::after { animation: none !important; transition: none !important; }
+  }
+</style>
+
+<script>
+(function () {
+  var kok = document.getElementById("modulex-ilan-{{id}}");
+  var veriEl = document.getElementById("modulex-ilan-{{id}}-veri");
+  if (!kok || !veriEl) { return; }
+  var veri;
+  try { veri = JSON.parse(veriEl.textContent); } catch (e) { return; }
+  var cfg = veri.cfg || {};
+
+  function hazir(fn) {
+    if (window.mxLoad) { fn(); }
+    else if (document.readyState === "complete") { setTimeout(fn, 50); }
+    else { window.addEventListener("load", fn); }
+  }
+
+  function q(sel, ctx) { return (ctx || kok).querySelector(sel); }
+  function qa(sel, ctx) { return (ctx || kok).querySelectorAll(sel); }
+  function dizi(nl) { var o = []; for (var i = 0; i < nl.length; i++) { o.push(nl[i]); } return o; }
+
+  function basla() {
+    var MxF = window.MxFiltre;
+    if (!MxF) { return; }
+    var liste = q("[data-ilan-list]");
+    var bos = q("[data-ilan-empty]");
+    var durumEl = q("[data-ilan-status]");
+    var sayfaNav = q("[data-ilan-pages]");
+    var araEl = q("[data-ilan-q]");
+    var sirEl = q("[data-ilan-sort]");
+    var toggleEl = q("[data-ilan-toggle]");
+    var panel = q("[data-ilan-toggle]") ? document.getElementById(q("[data-ilan-toggle]").getAttribute("aria-controls")) : null;
+    var rozet = q("[data-ilan-active]");
+    var kartlar = {};
+    dizi(qa("[data-id]", liste)).forEach(function (el) { kartlar[el.getAttribute("data-id")] = el; });
+    var sonSayfa = 0;
+    var kullaniciSayfa = false;
+
+    var f = MxF.olustur({
+      items: veri.items || [],
+      arama: { alanlar: ["title", "district", "city", "permit"] },
+      facets: {
+        deal: { tip: "tek" },
+        type: { tip: "coklu" },
+        rooms: { tip: "coklu" },
+        m2: { tip: "aralik" },
+        price: { tip: "aralik" },
+        district: { tip: "tek", alan: "dk" }
+      },
+      siralama: {
+        date: { alan: "date", yon: -1, tip: "metin" },
+        price: { alan: "price", yon: 1 },
+        priceDesc: { alan: "price", yon: -1 },
+        m2: { alan: "m2", yon: -1 },
+        m2Asc: { alan: "m2", yon: 1 }
+      },
+      varsayilanSiralama: cfg.sort || "date",
+      sayfaBoyutu: cfg.pageSize || 9,
+      url: cfg.url !== false,
+      dil: cfg.lang || "tr"
+    });
+
+    /* ---- olaylar ---- */
+    function topla(ad) {
+      var r = [];
+      dizi(qa('input[data-ilan-facet="' + ad + '"]')).forEach(function (c) { if (c.checked) { r.push(c.value); } });
+      return r;
+    }
+    function aralikOku(ad) {
+      var ins = qa('[data-ilan-range="' + ad + '"]');
+      var a = ins[0].value;
+      var b = ins[1].value;
+      if (a === "" && b === "") { return ""; }
+      return [a === "" ? null : Number(a), b === "" ? null : Number(b)];
+    }
+    var aralikZaman = null;
+    function aralikUygula(ad) {
+      if (aralikZaman) { clearTimeout(aralikZaman); }
+      aralikZaman = setTimeout(function () { var o = {}; o[ad] = aralikOku(ad); f.ayarla(o); }, 300);
+    }
+
+    kok.addEventListener("click", function (e) {
+      var t = e.target;
+      var el = t.closest ? t.closest("button") : null;
+      if (!el || !kok.contains(el)) { return; }
+      if (el.hasAttribute("data-ilan-deal")) {
+        f.ayarla({ deal: el.getAttribute("data-ilan-deal") });
+      } else if (el.hasAttribute("data-ilan-reset")) {
+        f.sifirla();
+        if (araEl) { araEl.value = ""; }
+      } else if (el.hasAttribute("data-ilan-toggle")) {
+        var acik = panel && panel.classList.toggle("is-open");
+        el.setAttribute("aria-expanded", acik ? "true" : "false");
+      } else if (el.hasAttribute("data-ilan-page")) {
+        kullaniciSayfa = true;
+        f.sayfaGit(Number(el.getAttribute("data-ilan-page")));
+      }
+    });
+    kok.addEventListener("change", function (e) {
+      var t = e.target;
+      if (t.hasAttribute("data-ilan-sort")) {
+        f.sirala(t.value);
+      } else if (t.getAttribute("data-ilan-facet") === "district") {
+        f.ayarla({ district: t.value });
+      } else if (t.getAttribute("data-ilan-facet")) {
+        var ad = t.getAttribute("data-ilan-facet");
+        var o = {};
+        o[ad] = topla(ad);
+        f.ayarla(o);
+      } else if (t.getAttribute("data-ilan-range")) {
+        aralikUygula(t.getAttribute("data-ilan-range"));
+      }
+    });
+    kok.addEventListener("input", function (e) {
+      var t = e.target;
+      if (t.getAttribute && t.getAttribute("data-ilan-range")) { aralikUygula(t.getAttribute("data-ilan-range")); }
+    });
+    if (araEl) { MxF.aramaBagla(araEl, f, 200); }
+
+    /* ---- arayüzü duruma eşitle ---- */
+    function sayfaDugmesi(etiket, sayfa, ozellik) {
+      var b = document.createElement("button");
+      b.type = "button";
+      b.className = "modulex-ilan-pg";
+      b.setAttribute("data-ilan-page", String(sayfa));
+      if (ozellik.aria) { b.setAttribute("aria-label", ozellik.aria); }
+      if (ozellik.simge) {
+        var ic = document.createElement("span");
+        ic.className = "material-symbols-outlined mx-flip";
+        ic.setAttribute("aria-hidden", "true");
+        ic.textContent = ozellik.simge;
+        b.appendChild(ic);
+      } else {
+        b.textContent = etiket;
+      }
+      if (ozellik.gecerli) { b.setAttribute("aria-current", "page"); }
+      if (ozellik.pasif) { b.disabled = true; }
+      return b;
+    }
+    function sayfalariCiz(s) {
+      sayfaNav.innerHTML = "";
+      if (s.sayfaSayisi <= 1) { sayfaNav.hidden = true; return; }
+      sayfaNav.hidden = false;
+      sayfaNav.appendChild(sayfaDugmesi("", s.sayfa - 1, { simge: "chevron_left", aria: cfg.prevPage, pasif: s.sayfa <= 1 }));
+      var son = 0;
+      for (var n = 1; n <= s.sayfaSayisi; n++) {
+        var goster = n === 1 || n === s.sayfaSayisi || Math.abs(n - s.sayfa) <= 1;
+        if (!goster) { continue; }
+        if (son && n - son > 1) {
+          var g = document.createElement("span");
+          g.className = "modulex-ilan-gap";
+          g.setAttribute("aria-hidden", "true");
+          g.textContent = "…";
+          sayfaNav.appendChild(g);
+        }
+        sayfaNav.appendChild(sayfaDugmesi(String(n), n, { aria: String(cfg.pageN || "").replace("{n}", String(n)), gecerli: n === s.sayfa }));
+        son = n;
+      }
+      sayfaNav.appendChild(sayfaDugmesi("", s.sayfa + 1, { simge: "chevron_right", aria: cfg.nextPage, pasif: s.sayfa >= s.sayfaSayisi }));
+    }
+
+    function guncelle(s) {
+      var d = s.durum;
+      var i;
+      /* sekmeler */
+      dizi(qa("[data-ilan-deal]")).forEach(function (b) {
+        var acik = (d.facet.deal || "") === b.getAttribute("data-ilan-deal");
+        b.classList.toggle("is-on", acik);
+        b.setAttribute("aria-pressed", acik ? "true" : "false");
+      });
+      /* onay kutuları + semt + aralıklar + sıralama + arama */
+      ["type", "rooms"].forEach(function (ad) {
+        var secili = d.facet[ad] || [];
+        dizi(qa('input[data-ilan-facet="' + ad + '"]')).forEach(function (c) { c.checked = secili.indexOf(c.value) > -1; });
+      });
+      var sem = q('select[data-ilan-facet="district"]');
+      if (sem) { sem.value = d.facet.district || ""; }
+      ["m2", "price"].forEach(function (ad) {
+        var ins = qa('[data-ilan-range="' + ad + '"]');
+        var r = d.facet[ad];
+        for (var k = 0; k < ins.length; k++) {
+          if (document.activeElement === ins[k]) { continue; }
+          ins[k].value = r && r[k] !== null && r[k] !== undefined ? r[k] : "";
+        }
+      });
+      if (sirEl) { sirEl.value = d.sirala; }
+      if (araEl && document.activeElement !== araEl) { araEl.value = d.q || ""; }
+      /* adetler */
+      var onbellek = {};
+      dizi(qa("[data-ilan-count]")).forEach(function (sp) {
+        var parca = sp.getAttribute("data-ilan-count").split(":");
+        var ad = parca[0];
+        var anahtar = parca[1];
+        if (!onbellek[ad]) { onbellek[ad] = f.sayim(ad); }
+        var n = 0;
+        if (anahtar === "") { for (var kk in onbellek[ad]) { if (Object.prototype.hasOwnProperty.call(onbellek[ad], kk)) { n += onbellek[ad][kk]; } } }
+        else { n = onbellek[ad][anahtar] || 0; }
+        sp.textContent = String(n);
+        var opt = sp.closest ? sp.closest(".modulex-ilan-opt") : null;
+        if (opt) { opt.classList.toggle("is-zero", n === 0); }
+      });
+      /* kartlar */
+      for (var id in kartlar) { if (Object.prototype.hasOwnProperty.call(kartlar, id)) { kartlar[id].hidden = true; } }
+      for (i = 0; i < s.liste.length; i++) {
+        var el = kartlar[s.liste[i].id];
+        if (el) { el.hidden = false; liste.appendChild(el); }
+      }
+      liste.hidden = s.toplam === 0;
+      bos.hidden = s.toplam !== 0;
+      /* sonuç sayısı (çoğul formu dile göre) */
+      var formlar = (cfg.resultCount && (cfg.resultCount[cfg.lang] || cfg.resultCount.tr)) || { other: "{n}" };
+      durumEl.textContent = MxF.cogul(s.toplam, formlar, cfg.lang);
+      sayfalariCiz(s);
+      /* etkin filtre sayısı (mobil düğme rozeti) + sıfırla düğmeleri */
+      var say = d.q ? 1 : 0;
+      for (var fa in d.facet) { if (Object.prototype.hasOwnProperty.call(d.facet, fa)) { say++; } }
+      if (rozet) { rozet.hidden = say === 0; rozet.textContent = String(say); }
+      dizi(qa("[data-ilan-reset]")).forEach(function (b) { if (!b.closest || !b.closest("[data-ilan-empty]")) { b.hidden = !f.filtreVar(); } });
+      /* sayfa değişiminde (kullanıcı eylemi) sonuç başına kaydır */
+      if (kullaniciSayfa && sonSayfa && s.sayfa !== sonSayfa) {
+        var azalt = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        var ust = liste.getBoundingClientRect().top;
+        if (ust < 0 || ust > window.innerHeight) { durumEl.scrollIntoView({ behavior: azalt ? "auto" : "smooth", block: "start" }); }
+      }
+      kullaniciSayfa = false;
+      sonSayfa = s.sayfa;
+    }
+    f.abone(guncelle);
+    guncelle(f.sonuc());
+  }
+
+  hazir(function () {
+    if (window.MxFiltre) { basla(); }
+    else if (window.mxLoad) { window.mxLoad("mxfiltre").then(basla, function () {}); }
+  });
+})();
+</script>

@@ -1,0 +1,97 @@
+<section class="modulex-lb modulex-lb--{{lbstil}}" id="lb-{{id}}" style="{{lbvars}}">
+  <div class="modulex-lb__wrap">
+    {{lbhead}}
+    <div class="modulex-lb__band" role="region" aria-label="{{listLabel}}">
+      <div class="modulex-lb__track">
+        <ul class="modulex-lb__set">{{lbset}}</ul>
+        {{lbkopya}}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* logo-bandi — Referans logo bandı (31 Eki 2026, G8-C). Renkler yalnız desing anahtarı (token varsayılanlı). */
+  .modulex-lb {
+    box-sizing: border-box;
+    width: 100%;
+    padding-block: clamp(32px, 5vw, 64px);
+    padding-inline: clamp(16px, 4vw, 32px);
+    background: --bgcolor--;
+    color: --textcolor--;
+    overflow: hidden;
+  }
+  .modulex-lb *, .modulex-lb *::before, .modulex-lb *::after { box-sizing: border-box; }
+  .modulex-lb__wrap { max-width: --max--; margin-inline: auto; }
+
+  .modulex-lb__head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px 24px; margin-block-end: 24px; }
+  .modulex-lb__title { margin: 0; font-size: clamp(1.1rem, 0.9rem + 0.8vw, 1.5rem); line-height: 1.3; color: --textcolor--; }
+  .modulex-lb__desc { margin: 0; font-size: 0.95rem; color: --mutedcolor--; }
+
+  .modulex-lb__set { list-style: none; margin: 0; padding: 0; display: flex; align-items: center; gap: clamp(28px, 4vw, 64px); }
+  .modulex-lb__item { flex: 0 0 auto; display: flex; align-items: center; justify-content: center; min-height: 44px; }
+  .modulex-lb__link { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; min-width: 44px; color: inherit; text-decoration: none; }
+  .modulex-lb__img {
+    display: block; height: var(--lb-h, 48px); width: auto; max-width: 180px; object-fit: contain;
+    filter: grayscale(1); opacity: 0.62;
+    transition: filter 0.25s ease, opacity 0.25s ease, transform 0.25s ease;
+  }
+  .modulex-lb--renkli .modulex-lb__img { filter: none; opacity: 1; }
+  .modulex-lb__item:hover .modulex-lb__img,
+  .modulex-lb__link:focus-visible .modulex-lb__img { filter: none; opacity: 1; transform: scale(1.04); }
+  .modulex-lb__link:focus-visible { outline: 3px solid --accent--; outline-offset: 4px; border-radius: 6px; }
+  /* görselsiz satır: metin rozeti (marka adı) */
+  .modulex-lb__word {
+    display: inline-flex; align-items: center; height: var(--lb-h, 48px); padding-inline: 18px; border-radius: 999px;
+    border: 1px solid --bordercolor--; background: --surface--; color: --mutedcolor--;
+    font-weight: 600; font-size: 1rem; letter-spacing: 0.02em; white-space: nowrap;
+    transition: color 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+  }
+  .modulex-lb__item:hover .modulex-lb__word { color: --textcolor--; border-color: --accent--; transform: translateY(-2px); }
+
+  /* === kayan (varsayılan): iki kopya, sonsuz kayma; hover'da durur; kenarlar soluk === */
+  .modulex-lb--kayan .modulex-lb__band {
+    mask-image: linear-gradient(to right, transparent, currentColor 8%, currentColor 92%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, currentColor 8%, currentColor 92%, transparent);
+  }
+  .modulex-lb--kayan .modulex-lb__track { display: flex; width: max-content; gap: clamp(28px, 4vw, 64px); animation: modulexLbKay var(--lb-sure, 32s) linear infinite; }
+  [dir="rtl"] .modulex-lb--kayan .modulex-lb__track { animation-name: modulexLbKayRtl; }
+  .modulex-lb--kayan .modulex-lb__band:hover .modulex-lb__track,
+  .modulex-lb--kayan .modulex-lb__band:focus-within .modulex-lb__track { animation-play-state: paused; }
+  @keyframes modulexLbKay { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  @keyframes modulexLbKayRtl { from { transform: translateX(0); } to { transform: translateX(50%); } }
+
+  /* === izgara: çizgili hücreler (tablo hissi), kayma yok === */
+  .modulex-lb--izgara .modulex-lb__set { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 0; /* 1200px'te 8 hücre tek satır (150'de 8. hücre yalnız kalıyordu) */ border-block-start: 1px solid --bordercolor--; border-inline-start: 1px solid --bordercolor--; }
+  .modulex-lb--izgara .modulex-lb__item { min-height: 112px; padding: 16px; border-block-end: 1px solid --bordercolor--; border-inline-end: 1px solid --bordercolor--; transition: background-color 0.25s ease; }
+  .modulex-lb--izgara .modulex-lb__item:hover { background: --surface--; }
+  .modulex-lb--izgara .modulex-lb__img { max-width: 100%; }
+
+  /* === cerceveli-kartlar: kart + marka adı altta === */
+  .modulex-lb--cerceveli-kartlar .modulex-lb__set { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 16px; }
+  .modulex-lb--cerceveli-kartlar .modulex-lb__item {
+    min-height: 128px; padding: 18px 16px;
+    background: --surface--; border: 1px solid --bordercolor--; border-radius: --radius--;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  }
+  .modulex-lb--cerceveli-kartlar .modulex-lb__item:hover { transform: translateY(-4px); box-shadow: 0 16px 30px -20px rgba(0, 0, 0, 0.4); border-color: color-mix(in srgb, --accent-- 45%, transparent); }
+  .modulex-lb--cerceveli-kartlar .modulex-lb__link,
+  .modulex-lb--cerceveli-kartlar .modulex-lb__item { flex-direction: column; gap: 10px; }
+  .modulex-lb--cerceveli-kartlar .modulex-lb__item[title]::after { content: attr(title); font-size: 0.85rem; color: --mutedcolor--; text-align: center; }
+  .modulex-lb--cerceveli-kartlar .modulex-lb__word { background: transparent; border: 0; height: auto; padding: 0; white-space: normal; text-align: center; color: --textcolor--; }
+
+  @media (max-width: 768px) {
+    .modulex-lb__head { flex-direction: column; }
+    .modulex-lb--izgara .modulex-lb__set { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .modulex-lb--cerceveli-kartlar .modulex-lb__set { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    [class*="modulex"] { max-width: 100%; box-sizing: border-box; }
+  }
+  /* reduced-motion: kayma yok → kopya gizli, tek set sarılan statik ızgara */
+  @media (prefers-reduced-motion: reduce) {
+    .modulex-lb *, .modulex-lb *::before, .modulex-lb *::after { animation: none !important; transition: none !important; }
+    .modulex-lb--kayan .modulex-lb__track { width: auto; display: block; }
+    .modulex-lb--kayan .modulex-lb__set { flex-wrap: wrap; justify-content: center; gap: 20px 36px; }
+    .modulex-lb--kayan .modulex-lb__set--kopya { display: none; }
+    .modulex-lb--kayan .modulex-lb__band { mask-image: none; -webkit-mask-image: none; }
+  }
+</style>

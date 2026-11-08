@@ -1,0 +1,57 @@
+{
+  "name": {
+    "tr": "Referans Logo Bandı",
+    "en": "Client Logo Strip",
+    "ar": "شريط شعارات العملاء"
+  },
+  "description": {
+    "tr": "Referans/partner logoları: gri tonlu, sonsuz yatay kayan bant (CSS keyframes, iki kopya; hover'da durur ve renklenir; reduced-motion'da statik ızgara). İsteğe bağlı başlık satırı. Görseli olmayan satırda metin rozeti. Üç varyant (desing.stil): kayan · izgara · cerceveli-kartlar. data[] = {name, img, url}. Üç dil, RTL, koyu mod token'larla.",
+    "en": "Client/partner logos: greyscale, infinite horizontal marquee (CSS keyframes, two copies; pauses and colors on hover; static grid under reduced-motion). Optional heading row. Rows without an image get a text badge. Three variants (desing.stil): kayan · izgara · cerceveli-kartlar. data[] = {name, img, url}. Three languages, RTL, dark mode via tokens.",
+    "ar": "شعارات العملاء/الشركاء: رمادية، شريط أفقي لا نهائي (CSS، نسختان؛ يتوقف ويتلوّن عند التمرير؛ شبكة ثابتة عند تقليل الحركة). صف عنوان اختياري. ثلاثة أنماط، ثلاث لغات، RTL، وضع داكن."
+  },
+  "version": "1.0.0",
+  "icon": "handshake",
+  "category": "referans",
+  "tags": ["referans", "logo", "partner", "marquee", "clients", "ar"],
+  "desing": {
+    "max": "1200px",
+    "stil": "kayan",
+    "speed": 32,
+    "logoH": "48px",
+    "grayscale": true,
+    "bgcolor": "var(--mx-site-bg, #ffffff)",
+    "textcolor": "var(--mx-site-text, #1b1b1b)",
+    "mutedcolor": "color-mix(in srgb, var(--mx-site-text, #1b1b1b) 70%, var(--mx-site-bg, #ffffff))",
+    "surface": "var(--mx-site-surface, #f6f6f4)",
+    "bordercolor": "color-mix(in srgb, var(--mx-site-text, #1b1b1b) 14%, transparent)",
+    "accent": "var(--mx-site-primary, #2563eb)",
+    "radius": "14px",
+    "showTitle": true,
+    "title": {
+      "tr": "Bize güvenen markalar",
+      "en": "Brands that trust us",
+      "ar": "علامات تجارية تثق بنا"
+    },
+    "description": {
+      "tr": "Farklı sektörlerden 120'den fazla kurumla çalıştık.",
+      "en": "We have worked with over 120 organisations across industries.",
+      "ar": "عملنا مع أكثر من 120 مؤسسة في قطاعات مختلفة."
+    },
+    "listLabel": { "tr": "Referans logoları", "en": "Client logos", "ar": "شعارات العملاء" }
+  },
+  "data": [
+    { "name": "Aurora Holding", "img": "", "url": "" },
+    { "name": "Mavi Lojistik", "img": "", "url": "" },
+    { "name": "Nova Enerji", "img": "", "url": "" },
+    { "name": "Kalem Yapı", "img": "", "url": "" },
+    { "name": "Delta Gıda", "img": "", "url": "" },
+    { "name": "Orion Tekstil", "img": "", "url": "" },
+    { "name": "Zenit Mobilya", "img": "", "url": "" },
+    { "name": "Vega Teknoloji", "img": "", "url": "" }
+  ],
+  "veri": {
+    "statik": true,
+    "dinamik": false,
+    "kaynak": "desing/data"
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "name": {
+    "tr": "Hero 5 — Tam ekran parallax / video",
+    "en": "Hero 5 — Full-screen parallax / video",
+    "ar": "هيرو 5 — شاشة كاملة بارالاكس / فيديو"
+  },
+  "description": {
+    "tr": "Tam ekran hero: arka plan görseli (desing.img) ya da sessiz döngü video (desing.video + zorunlu poster; reduced-motion'da yalnız poster). Üstte koyu→şeffaf gradient scrim (overlay/overlayText çifti), hafif parallax (JS, reduced-motion'da kapalı), aşağı kaydır oku. desing.stil: ortali | sol | alt-serit (metin alt şeritte yarı saydam kart). Yükseklik desing.yukseklik (vh, min 480px). Üç dil + RTL.",
+    "en": "Full-screen hero: background image (desing.img) or muted looping video (desing.video + required poster; poster only under reduced-motion). Dark→transparent gradient scrim on top (overlay/overlayText pair), light parallax (JS, off under reduced-motion), scroll-down arrow. desing.stil: ortali | sol | alt-serit (text in a translucent bottom strip card). Height desing.yukseklik (vh, min 480px). Three languages + RTL.",
+    "ar": "هيرو بملء الشاشة: صورة خلفية (desing.img) أو فيديو صامت متكرر (desing.video مع poster إلزامي؛ عند تقليل الحركة يظهر الـ poster فقط). تدرّج داكن→شفاف فوق الصورة (زوج overlay/overlayText)، بارالاكس خفيف (JS، يتوقف عند تقليل الحركة)، سهم التمرير للأسفل. desing.stil: ortali | sol | alt-serit (النص في شريط سفلي شبه شفاف). الارتفاع desing.yukseklik (vh، الحد الأدنى 480px). ثلاث لغات + RTL."
+  },
+  "version": "1.0.0",
+  "icon": "fullscreen",
+  "category": "hero",
+  "tags": ["hero", "fullscreen", "parallax", "video", "tam-ekran", "ar"],
+  "desing": {
+    "stil": "ortali",
+    "hiza": "orta",
+    "yukseklik": 88,
+    "max": "1200px",
+    "img": "",
+    "video": "",
+    "poster": "",
+    "alt": {
+      "tr": "Tesisimizden genel görünüm",
+      "en": "Overview of our facility",
+      "ar": "منظر عام لمنشأتنا"
+    },
+    "overlay": "color-mix(in srgb, var(--mx-site-primary, #2563eb) 28%, #0b1220)",
+    "overlayText": "#ffffff",
+    "accent": "var(--mx-site-primary, #2563eb)",
+    "accentText": "var(--mx-site-primary-contrast, #ffffff)",
+    "bg": "var(--mx-site-bg, #ffffff)",
+    "radius": "16px",
+    "eyebrow": {
+      "tr": "1998'den beri",
+      "en": "Since 1998",
+      "ar": "منذ عام 1998"
+    },
+    "title": {
+      "tr": "Her projede aynı özen, aynı kalite",
+      "en": "The same care and quality in every project",
+      "ar": "العناية نفسها والجودة نفسها في كل مشروع"
+    },
+    "metin": {
+      "tr": "Modern tesisimiz ve deneyimli ekibimizle sektörün ihtiyaçlarına uçtan uca çözüm üretiyoruz.",
+      "en": "With our modern facility and experienced team we deliver end-to-end solutions for the industry.",
+      "ar": "بمنشأتنا الحديثة وفريقنا ذي الخبرة نقدّم حلولًا متكاملة لاحتياجات القطاع."
+    },
+    "cta1": {
+      "tr": "Bize ulaşın",
+      "en": "Contact us",
+      "ar": "تواصل معنا"
+    },
+    "cta1_url": "iletisim",
+    "cta2": {
+      "tr": "Referanslar",
+      "en": "References",
+      "ar": "مراجعنا"
+    },
+    "cta2_url": "referanslar",
+    "scroll_label": {
+      "tr": "Aşağı kaydır",
+      "en": "Scroll down",
+      "ar": "مرّر للأسفل"
+    }
+  },
+  "data": [],
+  "veri": {
+    "statik": true,
+    "dinamik": false,
+    "kaynak": "desing/data"
+  }
+}

@@ -1,0 +1,132 @@
+{
+  "name": {
+    "tr": "İletişim 7 — Bölünmüş panel",
+    "en": "Contact 7 — Split panel",
+    "ar": "اتصال 7 — لوحة مقسّمة"
+  },
+  "description": {
+    "tr": "Bölünmüş iletişim: koyu bilgi paneli (adres · telefon · e-posta · saat · sosyal · harita bağlantısı) + form (ad, e-posta, telefon, konu, mesaj, zorunlu KVKK onayı). Gönderim mailto: ya da WhatsApp hazır mesaj (desing.gonderim). Üç görsel varyant (desing.stil): bolunmus · kart-ustte · harita-arka (iframe arka plan, yüzen form). Üç dil, RTL, koyu mod token'larla.",
+    "en": "Split contact section: dark info panel (address · phone · e-mail · hours · social · map link) + form (name, e-mail, phone, subject, message, required privacy consent). Submission via mailto: or WhatsApp prefilled message (desing.gonderim). Three visual variants (desing.stil): bolunmus · kart-ustte · harita-arka (iframe background, floating form). Three languages, RTL, dark mode via tokens.",
+    "ar": "قسم اتصال مقسّم: لوحة معلومات داكنة (العنوان · الهاتف · البريد · ساعات العمل · التواصل الاجتماعي · رابط الخريطة) + نموذج (الاسم، البريد، الهاتف، الموضوع، الرسالة، موافقة خصوصية إلزامية). الإرسال عبر mailto: أو رسالة واتساب جاهزة. ثلاثة أنماط مرئية، ثلاث لغات، RTL، وضع داكن."
+  },
+  "version": "1.0.0",
+  "icon": "contact_mail",
+  "category": "contact",
+  "tags": ["iletisim", "contact", "form", "whatsapp", "mailto", "kvkk", "ar"],
+  "bosOlabilir": ["address", "phone", "email", "hours", "panelText", "description"],
+  "desing": {
+    "max": "1200px",
+    "stil": "bolunmus",
+    "gonderim": "mailto",
+    "formAction": "",
+    "bgcolor": "var(--mx-site-bg, #ffffff)",
+    "textcolor": "var(--mx-site-text, #1b1b1b)",
+    "mutedcolor": "color-mix(in srgb, var(--mx-site-text, #1b1b1b) 72%, var(--mx-site-bg, #ffffff))",
+    "surface": "var(--mx-site-surface, #f6f6f4)",
+    "bordercolor": "color-mix(in srgb, var(--mx-site-text, #1b1b1b) 18%, transparent)",
+    "accent": "var(--mx-site-primary, #2563eb)",
+    "accentText": "var(--mx-site-primary-contrast, #ffffff)",
+    "panelbg": "color-mix(in srgb, #0f172a 82%, var(--mx-site-primary, #2563eb))",
+    "paneltext": "#f1f5f9",
+    "panelmuted": "color-mix(in srgb, #f1f5f9 74%, transparent)",
+    "errcolor": "var(--mx-color-danger, #b42318)",
+    "radius": "16px",
+    "title": {
+      "tr": "Bize Ulaşın",
+      "en": "Get in Touch",
+      "ar": "تواصل معنا"
+    },
+    "description": {
+      "tr": "Sorularınız, teklif talepleriniz ve iş birlikleri için formu doldurun; en kısa sürede dönüş yapalım.",
+      "en": "Fill in the form for questions, quote requests and partnerships; we will get back to you shortly.",
+      "ar": "املأ النموذج لأسئلتك وطلبات عروض الأسعار والشراكات؛ سنعود إليك في أقرب وقت."
+    },
+    "panelTitle": {
+      "tr": "İletişim Bilgileri",
+      "en": "Contact Details",
+      "ar": "بيانات الاتصال"
+    },
+    "panelText": {
+      "tr": "Ofisimize uğrayın, arayın ya da yazın — size yardımcı olmaktan mutluluk duyarız.",
+      "en": "Drop by our office, call or write — we are happy to help.",
+      "ar": "تفضّل بزيارة مكتبنا أو اتصل بنا أو اكتب لنا — يسعدنا مساعدتك."
+    },
+    "address": {
+      "tr": "Örnek Mah. Atatürk Cad. No: 12, Şehitkamil / Gaziantep",
+      "en": "Ornek District, Ataturk Ave. No: 12, Sehitkamil / Gaziantep",
+      "ar": "حي أورنك، شارع أتاتورك رقم 12، شهيد كامل / غازي عنتاب"
+    },
+    "phone": "+90 342 000 00 00",
+    "whatsapp": "",
+    "email": "info@ornek.com",
+    "hours": {
+      "tr": "Pzt – Cum: 09:00 – 18:00 · Cmt: 10:00 – 14:00",
+      "en": "Mon – Fri: 09:00 – 18:00 · Sat: 10:00 – 14:00",
+      "ar": "الإثنين – الجمعة: 09:00 – 18:00 · السبت: 10:00 – 14:00"
+    },
+    "mapUrl": "",
+    "mapEmbed": "",
+    "addressTitle": { "tr": "Adres", "en": "Address", "ar": "العنوان" },
+    "phoneTitle": { "tr": "Telefon", "en": "Phone", "ar": "الهاتف" },
+    "emailTitle": { "tr": "E-posta", "en": "E-mail", "ar": "البريد الإلكتروني" },
+    "hoursTitle": { "tr": "Çalışma Saatleri", "en": "Working Hours", "ar": "ساعات العمل" },
+    "mapLink": { "tr": "Haritada gör", "en": "View on map", "ar": "عرض على الخريطة" },
+    "mapTitle": { "tr": "Konum haritası", "en": "Location map", "ar": "خريطة الموقع" },
+    "socialTitle": { "tr": "Bizi takip edin", "en": "Follow us", "ar": "تابعنا" },
+    "social": [
+      { "ad": "Instagram", "url": "https://instagram.com/", "icon": "photo_camera" },
+      { "ad": "LinkedIn", "url": "https://linkedin.com/", "icon": "work" },
+      { "ad": "YouTube", "url": "https://youtube.com/", "icon": "play_circle" }
+    ],
+    "formTitle": { "tr": "Mesaj Gönderin", "en": "Send a Message", "ar": "أرسل رسالة" },
+    "nameLabel": { "tr": "Ad Soyad", "en": "Full name", "ar": "الاسم الكامل" },
+    "emailLabel": { "tr": "E-posta", "en": "E-mail", "ar": "البريد الإلكتروني" },
+    "phoneLabel": { "tr": "Telefon", "en": "Phone", "ar": "الهاتف" },
+    "subjectLabel": { "tr": "Konu", "en": "Subject", "ar": "الموضوع" },
+    "subjectPlaceholder": { "tr": "Konu seçin", "en": "Choose a subject", "ar": "اختر الموضوع" },
+    "subjects": [
+      { "id": "teklif", "name": { "tr": "Teklif talebi", "en": "Quote request", "ar": "طلب عرض سعر" } },
+      { "id": "bilgi", "name": { "tr": "Bilgi almak istiyorum", "en": "I would like information", "ar": "أرغب في الحصول على معلومات" } },
+      { "id": "destek", "name": { "tr": "Destek", "en": "Support", "ar": "الدعم" } },
+      { "id": "diger", "name": { "tr": "Diğer", "en": "Other", "ar": "أخرى" } }
+    ],
+    "messageLabel": { "tr": "Mesajınız", "en": "Your message", "ar": "رسالتك" },
+    "kvkkText": {
+      "tr": "Kişisel verilerimin iletişim amacıyla işlenmesine ilişkin aydınlatma metnini okudum, onaylıyorum.",
+      "en": "I have read and accept the privacy notice on processing my personal data for contact purposes.",
+      "ar": "قرأتُ إشعار الخصوصية بشأن معالجة بياناتي الشخصية لأغراض التواصل وأوافق عليه."
+    },
+    "kvkkLinkText": { "tr": "Aydınlatma metni", "en": "Privacy notice", "ar": "إشعار الخصوصية" },
+    "kvkkHref": "",
+    "submitText": { "tr": "Gönder", "en": "Send", "ar": "إرسال" },
+    "submitWhatsappText": { "tr": "WhatsApp ile gönder", "en": "Send via WhatsApp", "ar": "إرسال عبر واتساب" },
+    "mailSubject": { "tr": "Web sitesi iletişim formu", "en": "Website contact form", "ar": "نموذج الاتصال بالموقع" },
+    "optionalText": { "tr": "isteğe bağlı", "en": "optional", "ar": "اختياري" },
+    "errRequired": { "tr": "Bu alan zorunludur.", "en": "This field is required.", "ar": "هذا الحقل إلزامي." },
+    "errEmail": { "tr": "Geçerli bir e-posta adresi girin.", "en": "Enter a valid e-mail address.", "ar": "أدخل بريدًا إلكترونيًا صالحًا." },
+    "errPhone": { "tr": "Geçerli bir telefon numarası girin.", "en": "Enter a valid phone number.", "ar": "أدخل رقم هاتف صالحًا." },
+    "errKvkk": { "tr": "Devam etmek için onay kutusunu işaretleyin.", "en": "Tick the consent box to continue.", "ar": "حدّد خانة الموافقة للمتابعة." },
+    "errSummary": { "tr": "Lütfen işaretli alanları düzeltin.", "en": "Please fix the highlighted fields.", "ar": "يرجى تصحيح الحقول المحددة." },
+    "okText": {
+      "tr": "E-posta uygulamanız açılıyor; mesajı oradan gönderebilirsiniz.",
+      "en": "Your e-mail app is opening; you can send the message from there.",
+      "ar": "يتم فتح تطبيق البريد الإلكتروني؛ يمكنك إرسال الرسالة من هناك."
+    },
+    "okWhatsappText": {
+      "tr": "WhatsApp açılıyor; hazır mesajı gönderebilirsiniz.",
+      "en": "WhatsApp is opening; you can send the prepared message.",
+      "ar": "يتم فتح واتساب؛ يمكنك إرسال الرسالة الجاهزة."
+    },
+    "waIntro": {
+      "tr": "Merhaba, web sitenizden yazıyorum.",
+      "en": "Hello, I am writing from your website.",
+      "ar": "مرحبًا، أكتب إليكم من موقعكم الإلكتروني."
+    }
+  },
+  "data": [],
+  "veri": {
+    "statik": true,
+    "dinamik": false,
+    "kaynak": "desing/data"
+  }
+}
