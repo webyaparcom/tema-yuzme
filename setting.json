@@ -1,0 +1,54 @@
+{
+  "order": false,
+  "user": false,
+  "description": {
+    "tr": "Yüzme dersi; görseller temsilîdir.",
+    "en": "Swim lessons; images are representative.",
+    "ar": "دروس سباحة؛ الصور تمثيلية."
+  },
+  "keyword": {
+    "tr": "yüzme, havuz, ders",
+    "en": "swimming, pool, lessons",
+    "ar": "سباحة، مسبح، دروس"
+  },
+  "category": "Kurumsal",
+  "name": "Dalga Yüzme",
+  "domain": "yuzme.webyapar.com",
+  "langs": {
+    "tr": true,
+    "en": true,
+    "ar": true,
+    "de": false,
+    "ru": false,
+    "es": false,
+    "fr": false,
+    "it": false,
+    "ja": false,
+    "zh": false,
+    "ko": false,
+    "pt": false
+  },
+  "logo": "logo.png",
+  "multi": false,
+  "publishMode": "static",
+  "font": {
+    "body": "poppins",
+    "heading": "poppins",
+    "ar": {
+      "body": "ibm-plex-sans-arabic",
+      "heading": "noto-kufi-arabic"
+    }
+  },
+  "colorScheme": "auto",
+  "theme_color": "#018078",
+  "seo": {
+    "noindex": true
+  },
+  "cssTokens": {
+    "--mx-radius-sm": "5px",
+    "--mx-radius-md": "8px",
+    "--mx-radius-lg": "11px",
+    "--mx-radius-xl": "15px"
+  },
+  "icon": "icon.png"
+}

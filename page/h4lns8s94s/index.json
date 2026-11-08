@@ -1,0 +1,40 @@
+{
+  "id": "h4lns8s94s",
+  "name": {
+    "tr": "Ekibimiz",
+    "en": "Our team",
+    "ar": "فريقنا"
+  },
+  "description": {
+    "tr": "Sizi karşılayan çalışanlarımız.",
+    "en": "The staff who welcomes you.",
+    "ar": "الموظفون الذين يستقبلونكم."
+  },
+  "keyword": {
+    "tr": "ekip, kadro",
+    "en": "team, staff",
+    "ar": "فريق، طاقم"
+  },
+  "path": "ekip",
+  "icon": "groups",
+  "category": "hakkimizda",
+  "status": "play",
+  "desing": {
+    "header": [],
+    "body": [
+      "ec5h2j",
+      "33r7rl"
+    ],
+    "footer": []
+  },
+  "index": 2,
+  "url": "",
+  "text": {},
+  "title": {
+    "tr": "Ekibimiz",
+    "en": "Our team",
+    "ar": "فريقنا"
+  },
+  "date": "2026-11-05T18:57:30.432Z",
+  "update": "2026-11-06T00:01:16.953Z"
+}

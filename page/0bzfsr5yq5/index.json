@@ -1,0 +1,40 @@
+{
+  "id": "0bzfsr5yq5",
+  "name": {
+    "tr": "Hizmetlerimiz",
+    "en": "Our services",
+    "ar": "خدماتنا"
+  },
+  "description": {
+    "tr": "Kayıttan dengeye; dersten takibe.",
+    "en": "From registration to balance; from lesson to tracking.",
+    "ar": "من التسجيل إلى التوازن؛ من الدرس إلى المتابعة."
+  },
+  "keyword": {
+    "tr": "Su & Hareket",
+    "en": "Water & Movement",
+    "ar": "ماء وحركة"
+  },
+  "path": "hizmetler",
+  "icon": "work",
+  "category": "",
+  "status": "play",
+  "desing": {
+    "header": [],
+    "body": [
+      "o74ph6",
+      "gw30eo"
+    ],
+    "footer": []
+  },
+  "index": 0,
+  "url": "",
+  "text": {},
+  "title": {
+    "tr": "Hizmetlerimiz",
+    "en": "Our services",
+    "ar": "خدماتنا"
+  },
+  "date": "2026-11-05T18:57:30.424Z",
+  "update": "2026-11-06T00:01:16.947Z"
+}
