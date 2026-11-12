@@ -8,9 +8,9 @@
         "ar": "خدماتنا"
       },
       "description": {
-        "tr": "Kayıttan dengeye; dersten takibe.",
-        "en": "From registration to balance; from lesson to tracking.",
-        "ar": "من التسجيل إلى التوازن؛ من الدرس إلى المتابعة."
+        "tr": "Çocuk, yetişkin ve özel ders; seviyeye göre gruplar.",
+        "en": "Kids, adults and private lessons; groups by level.",
+        "ar": "أطفال وكبار ودروس خاصة؛ مجموعات حسب المستوى."
       },
       "path": "hizmetler",
       "icon": "work",
@@ -49,9 +49,9 @@
       },
       "pathnext": "",
       "description": {
-        "tr": "Yüzme dersi; görseller temsilîdir.",
-        "en": "Swim lessons; images are representative.",
-        "ar": "دروس سباحة؛ الصور تمثيلية."
+        "tr": "Yüzme okulu; görseller temsilîdir.",
+        "en": "A swim school; images are representative.",
+        "ar": "مدرسة سباحة؛ الصور تمثيلية."
       }
     },
     {
