@@ -30,6 +30,12 @@
           "tr": "(yeni sekmede açılır)",
           "en": "(opens in a new tab)",
           "ar": "(يفتح في علامة تبويب جديدة)"
+        },
+        "girisHref": "",
+        "girisText": {
+          "tr": "Üye Girişi",
+          "en": "Login",
+          "ar": "تسجيل الدخول"
         }
       },
       "version": "1.0.0",
@@ -766,7 +772,12 @@
         "social_media": false,
         "logo_maxh": "60px",
         "logo_plate": false,
-        "contact_line": "auto"
+        "contact_line": "auto",
+        "logoDark": "",
+        "duzen": "",
+        "slogan": "",
+        "ikinciSutun": "",
+        "iletisimNot": ""
       },
       "version": "1.0.0",
       "icon": "widgets",
@@ -1478,9 +1489,9 @@
         "accentText": "var(--mx-site-primary-contrast, #ffffff)",
         "border": "color-mix(in srgb, var(--mx-site-text, #1b1b1b) 14%, transparent)",
         "cta": {
-          "tr": "Teklif al",
-          "en": "Get a quote",
-          "ar": "اطلب عرض سعر"
+          "tr": "Deneme dersi",
+          "en": "Trial lesson",
+          "ar": "حصة تجريبية"
         },
         "cta_url": "teklif-al"
       },
@@ -1535,28 +1546,28 @@
         "eyebrow": {
           "tr": "Yüzme okulu",
           "en": "Swim school",
-          "ar": "مدسة سباحة"
+          "ar": "مدرسة سباحة"
         },
         "title": {
-          "tr": "Suda, sakin",
-          "en": "In the water, calm",
-          "ar": "في الماء، هادئ"
+          "tr": "Suya sakin bir başlangıç",
+          "en": "A calm start in the water",
+          "ar": "بداية هادئة في الماء"
         },
         "metin": {
-          "tr": "Dalga Yüzme, yüzme dersi verir. Görseller temsilidir; metinler kurgusaldır.",
-          "en": "Dalga gives swim lessons. Images are representative and text is fictional.",
-          "ar": "يعطي دالجا درس سباحة. الصور تمثيلية والنصوص افتراضية."
+          "tr": "Dalga Yüzme; çocuk ve yetişkin grupları, birebir ders ve cankurtaran gözetimiyle çalışan kurgusal bir yüzme okulu demosudur. İlk ders denemedir.",
+          "en": "Dalga Yüzme is a fictional swim school demo with kids' and adult groups, one-to-one lessons and lifeguard supervision. The first lesson is a trial.",
+          "ar": "دالغا للسباحة عرض تجريبي افتراضي لمدرسة سباحة بمجموعات للأطفال والكبار ودروس فردية وإشراف منقذ. الحصة الأولى تجريبية."
         },
         "cta1": {
-          "tr": "Dersler",
-          "en": "Lessons",
-          "ar": "دروس"
+          "tr": "Ders grupları",
+          "en": "Lesson groups",
+          "ar": "مجموعات الدروس"
         },
         "cta1_url": "hizmetler",
         "cta2": {
-          "tr": "Kurs iste",
-          "en": "Book a course",
-          "ar": "احجز دورة"
+          "tr": "Deneme dersi al",
+          "en": "Book a trial lesson",
+          "ar": "احجز حصة تجريبية"
         },
         "cta2_url": "teklif-al",
         "scroll_label": {
@@ -1601,9 +1612,9 @@
         "radius": "16px",
         "sure": 1000,
         "title": {
-          "tr": "Nasıl çalışır?",
-          "en": "How does it work?",
-          "ar": "كيف يعمل؟"
+          "tr": "Okulumuz rakamlarla",
+          "en": "Our school in numbers",
+          "ar": "مدرستنا بالأرقام"
         },
         "description": {
           "tr": "Kurgusal demo verileri.",
@@ -1613,43 +1624,13 @@
       },
       "data": [
         {
-          "deger": 120,
-          "sonek": "",
-          "ikon": "sports_esports",
-          "etiket": {
-            "tr": "Haftalık seans",
-            "en": "Weekly session",
-            "ar": "جلسة أسبوعية"
-          },
-          "aciklama": {
-            "tr": "Kurgusal demo değeri",
-            "en": "Fictional demo figure",
-            "ar": "قيمة تجريبية"
-          }
-        },
-        {
           "deger": 8,
           "sonek": "",
-          "ikon": "person",
+          "ikon": "groups",
           "etiket": {
             "tr": "Eğitmen",
             "en": "Instructors",
-            "ar": "مدربون"
-          },
-          "aciklama": {
-            "tr": "Kurgusal demo değeri",
-            "en": "Fictional demo figure",
-            "ar": "قيمة تجريبية"
-          }
-        },
-        {
-          "deger": 95,
-          "sonek": "%",
-          "ikon": "monitoring",
-          "etiket": {
-            "tr": "Su kontrolü",
-            "en": "Water control",
-            "ar": "تحقق الماء"
+            "ar": "مدرّب"
           },
           "aciklama": {
             "tr": "Kurgusal demo değeri",
@@ -1662,9 +1643,39 @@
           "sonek": "",
           "ikon": "pool",
           "etiket": {
-            "tr": "Havuz",
-            "en": "Pools",
-            "ar": "مسابح"
+            "tr": "Kulvar",
+            "en": "Lanes",
+            "ar": "مسار"
+          },
+          "aciklama": {
+            "tr": "Kurgusal demo değeri",
+            "en": "Fictional demo figure",
+            "ar": "قيمة تجريبية"
+          }
+        },
+        {
+          "deger": 24,
+          "sonek": "",
+          "ikon": "event_repeat",
+          "etiket": {
+            "tr": "Haftalık grup",
+            "en": "Weekly groups",
+            "ar": "مجموعة أسبوعية"
+          },
+          "aciklama": {
+            "tr": "Kurgusal demo değeri",
+            "en": "Fictional demo figure",
+            "ar": "قيمة تجريبية"
+          }
+        },
+        {
+          "deger": 45,
+          "sonek": "",
+          "ikon": "timer",
+          "etiket": {
+            "tr": "Dakika ders süresi",
+            "en": "Minutes per lesson",
+            "ar": "دقيقة لكل حصة"
           },
           "aciklama": {
             "tr": "Kurgusal demo değeri",
@@ -1695,98 +1706,98 @@
         "badgebg": "#2E6BFF",
         "badgecolor": "#ffffff",
         "badge": {
-          "tr": "Su & Hareket",
-          "en": "Water & Movement",
-          "ar": "ماء وحركة"
+          "tr": "Yüzme okulu",
+          "en": "Swim school",
+          "ar": "مدرسة السباحة"
         },
         "title": {
-          "tr": "Nasıl çalışır?",
-          "en": "How does it work?",
-          "ar": "كيف يعمل؟"
+          "tr": "Hangi grup size uygun?",
+          "en": "Which group suits you?",
+          "ar": "أي مجموعة تناسبك؟"
         },
         "description": {
-          "tr": "Kayıttan dengeye; dersten takibe.",
-          "en": "From registration to balance; from lesson to tracking.",
-          "ar": "من التسجيل إلى التوازن؛ من الدرس إلى المتابعة."
+          "tr": "Çocuk, yetişkin ve özel ders; seviyeye göre gruplar.",
+          "en": "Kids, adults and private lessons; groups by level.",
+          "ar": "أطفال وكبار ودروس خاصة؛ مجموعات حسب المستوى."
         }
       },
       "data": [
         {
           "icon": "pool",
           "name": {
-            "tr": "Havuz bakımı",
-            "en": "Pool maintenance",
-            "ar": "صيانة المسبح"
+            "tr": "Çocuk yüzme grupları",
+            "en": "Kids' swim groups",
+            "ar": "مجموعات سباحة الأطفال"
           },
           "description": {
-            "tr": "Su ve filtre bakımı.",
-            "en": "Water and filter maintenance.",
-            "ar": "صيانة ماء وفلتر."
+            "tr": "5–12 yaş; suya alışma ve temel kulaç.",
+            "en": "Ages 5–12; water confidence and basic strokes.",
+            "ar": "من 5 إلى 12 سنة؛ التآلف مع الماء والضربات الأساسية."
           }
         },
         {
-          "icon": "sports_esports",
+          "icon": "self_improvement",
           "name": {
-            "tr": "Yüzme dersi",
-            "en": "Swimming lesson",
-            "ar": "درس سباحة"
+            "tr": "Yetişkin başlangıç",
+            "en": "Adult beginners",
+            "ar": "مبتدئو الكبار"
           },
           "description": {
-            "tr": "Başlangıç ve gelişim dersi.",
-            "en": "Beginner and progress lesson.",
-            "ar": "درس مبتدئ ومتقدم."
+            "tr": "Suya ilk kez girenler için sakin, küçük gruplar.",
+            "en": "Calm, small groups for first-time swimmers.",
+            "ar": "مجموعات صغيرة وهادئة لمن يدخل الماء لأول مرة."
           }
         },
         {
-          "icon": "beach_access_access",
+          "icon": "person",
           "name": {
-            "tr": "Kıyafet ve alan",
-            "en": "Attire and area",
-            "ar": "ملابس ومنطقة"
+            "tr": "Özel ders",
+            "en": "Private lessons",
+            "ar": "دروس خاصة"
           },
           "description": {
-            "tr": "Kıyafet değişim alanı.",
-            "en": "Attire change area.",
-            "ar": "منطقة تبديل ملابس."
+            "tr": "Birebir ders; hedefe göre teknik ve kondisyon.",
+            "en": "One-to-one lessons; technique and fitness to your goal.",
+            "ar": "دروس فردية؛ تقنية ولياقة حسب هدفك."
           }
         },
         {
-          "icon": "monitoring",
+          "icon": "trending_up",
           "name": {
-            "tr": "Su analizi",
-            "en": "Water analysis",
-            "ar": "تحليل الماء"
+            "tr": "Teknik geliştirme",
+            "en": "Technique coaching",
+            "ar": "تطوير التقنية"
           },
           "description": {
-            "tr": "Su klor ve pH kontrolü (demo).",
-            "en": "Chlorine and pH water control (demo).",
-            "ar": "تحقق كلور و PH للماء (تجريبي)."
+            "tr": "Kulaç, nefes ve dönüş tekniği çalışması.",
+            "en": "Stroke, breathing and turn technique.",
+            "ar": "تمارين على الضربات والتنفس والدوران."
           }
         },
         {
-          "icon": "timer",
+          "icon": "directions_run",
           "name": {
-            "tr": "Seans takvimi",
-            "en": "Session calendar",
-            "ar": "تقويم جلسة"
+            "tr": "Kuru zemin ısınma",
+            "en": "Dry-land warm-up",
+            "ar": "إحماء على اليابسة"
           },
           "description": {
-            "tr": "Seans ve rezervasyon.",
-            "en": "Session and reservation.",
-            "ar": "جلسة وحجز."
+            "tr": "Ders öncesi esneme ve ısınma çalışması.",
+            "en": "Stretching and warm-up before the lesson.",
+            "ar": "تمارين مرونة وإحماء قبل الحصة."
           }
         },
         {
-          "icon": "first_aid",
+          "icon": "shield",
           "name": {
-            "tr": "Yanında güvenlik",
-            "en": "On-site safety",
-            "ar": "سلامة الموقع"
+            "tr": "Cankurtaran gözetimi",
+            "en": "Lifeguard supervision",
+            "ar": "إشراف المنقذ"
           },
           "description": {
-            "tr": "Kurtarma ve güvenlik kontrolü.",
-            "en": "Rescue and safety control.",
-            "ar": "إسعاف وتحقق أمان."
+            "tr": "Ders ve serbest saatlerde cankurtaran görevlidir.",
+            "en": "A lifeguard is on duty during lessons and open hours.",
+            "ar": "يتواجد منقذ في الحصص وأوقات السباحة الحرة."
           }
         }
       ],
@@ -1814,19 +1825,19 @@
         "accent": "var(--mx-site-primary, #2563eb)",
         "linecolor": "color-mix(in srgb, var(--mx-site-text, #1b1b1b) 18%, transparent)",
         "badge": {
-          "tr": "Nasıl çalışırız?",
-          "en": "How we work",
-          "ar": "كيف نعمل؟"
+          "tr": "Nasıl ilerliyoruz?",
+          "en": "How it works",
+          "ar": "كيف نسير؟"
         },
         "title": {
-          "tr": "Dört adımda süreç",
-          "en": "Process in four steps",
-          "ar": "العملية في أربع خطوات"
+          "tr": "Dört adımda yüzmeye",
+          "en": "Four steps to swimming",
+          "ar": "أربع خطوات إلى السباحة"
         },
         "description": {
-          "tr": "İlk görüşmeden teslimata aynı akış.",
-          "en": "The same flow, from first meeting to handover.",
-          "ar": "نفس التيار من أول لقاء إلى التسليم."
+          "tr": "Deneme dersinden seviye geçişine.",
+          "en": "From the trial lesson to moving up a level.",
+          "ar": "من الحصة التجريبية إلى الانتقال للمستوى التالي."
         },
         "accentText": "#ffffff",
         "cardbg": "var(--mx-site-surface, #ffffff)",
@@ -1836,53 +1847,53 @@
         {
           "year": "01",
           "title": {
-            "tr": "Kayıt",
-            "en": "Registration",
-            "ar": "التسجيل"
+            "tr": "Deneme dersi",
+            "en": "Trial lesson",
+            "ar": "حصة تجريبية"
           },
           "text": {
-            "tr": "Ders ve seviye seçimi.",
-            "en": "Lesson and level selection.",
-            "ar": "اختيار درس ومستوى."
+            "tr": "Havuzu ve eğitmeni tanıyın.",
+            "en": "Meet the pool and your instructor.",
+            "ar": "تعرّف على المسبح والمدرّب."
           }
         },
         {
           "year": "02",
           "title": {
-            "tr": "Seviye",
-            "en": "Level",
-            "ar": "المستوى"
+            "tr": "Seviye tespiti",
+            "en": "Level check",
+            "ar": "تحديد المستوى"
           },
           "text": {
-            "tr": "Su ve korku testi.",
-            "en": "Water and fear test.",
-            "ar": "اختبار ماء وخوف."
+            "tr": "Suda rahatlığınıza göre grup belirlenir.",
+            "en": "A group is chosen by your comfort in the water.",
+            "ar": "تُحدَّد المجموعة حسب راحتك في الماء."
           }
         },
         {
           "year": "03",
           "title": {
-            "tr": "Ders",
-            "en": "Lesson",
-            "ar": "درس"
+            "tr": "Haftalık ders",
+            "en": "Weekly lessons",
+            "ar": "الحصص الأسبوعية"
           },
           "text": {
-            "tr": "Seans ve teknik işi.",
-            "en": "Session and technique work.",
-            "ar": "جلسة وشغل تقنية."
+            "tr": "Haftada 1–2 gün düzenli seans.",
+            "en": "Regular sessions 1–2 days a week.",
+            "ar": "حصص منتظمة من يوم إلى يومين أسبوعيًا."
           }
         },
         {
           "year": "04",
           "title": {
-            "tr": "Takip",
-            "en": "Tracking",
-            "ar": "التتبع"
+            "tr": "Seviye geçişi",
+            "en": "Level progression",
+            "ar": "الانتقال للمستوى التالي"
           },
           "text": {
-            "tr": "Gelişim notu ve rapor.",
-            "en": "Progress note and report.",
-            "ar": "ملاحظة تقدم وتقريب."
+            "tr": "Kulaçlar oturunca bir üst gruba geçilir.",
+            "en": "Move up a group once your strokes are steady.",
+            "ar": "تنتقل إلى مجموعة أعلى عندما تستقر ضرباتك."
           }
         }
       ],
@@ -1911,14 +1922,14 @@
         "textcolor": "color-mix(in srgb, var(--mx-site-text, #1b1b1b) 72%, var(--mx-site-bg, #ffffff))",
         "accent": "var(--mx-site-primary, #2563eb)",
         "badge": {
-          "tr": "Ekibimiz",
-          "en": "Our team",
-          "ar": "فريقنا"
+          "tr": "Eğitmenlerimiz",
+          "en": "Our instructors",
+          "ar": "مدرّبونا"
         },
         "title": {
-          "tr": "Sizi karşılayan ekip",
-          "en": "The team that welcomes you",
-          "ar": "الفريق الذي يستقبلك"
+          "tr": "Sizi havuzda karşılayanlar",
+          "en": "Who you will meet at the pool",
+          "ar": "من ستقابلهم عند المسبح"
         },
         "description": {
           "tr": "Kurgusal demo profiller.",
@@ -1932,28 +1943,28 @@
         {
           "name": "Deniz L.",
           "role": {
-            "tr": "Baş Antrenör",
+            "tr": "Baş antrenör",
             "en": "Head coach",
-            "ar": "مدرب رئيسي"
+            "ar": "المدرب الرئيسي"
           },
           "bio": {
-            "tr": "10 yıl yüzme.",
-            "en": "10 years of swimming.",
-            "ar": "١٠ سنوات في السباحة."
+            "tr": "Çocuk ve yetişkin gruplarında 12 yıl.",
+            "en": "12 years with kids' and adult groups.",
+            "ar": "12 عامًا مع مجموعات الأطفال والكبار."
           },
           "img": ""
         },
         {
           "name": "Uğur B.",
           "role": {
-            "tr": "Havuz Teknisyeni",
+            "tr": "Havuz teknisyeni",
             "en": "Pool technician",
             "ar": "فني المسبح"
           },
           "bio": {
-            "tr": "7 yıl filtre.",
-            "en": "7 years of filter.",
-            "ar": "٧ سنوات في الفلتر."
+            "tr": "Su kalitesi ve havuz bakımında 9 yıl.",
+            "en": "9 years in water quality and pool care.",
+            "ar": "9 سنوات في جودة المياه وصيانة المسبح."
           },
           "img": ""
         },
@@ -1965,9 +1976,9 @@
             "ar": "منقذة"
           },
           "bio": {
-            "tr": "5 yıl kurtarma.",
-            "en": "5 years of rescue.",
-            "ar": "٥ سنوات في الإسعاف."
+            "tr": "Havuz güvenliği ve ilk yardımda 6 yıl.",
+            "en": "6 years in pool safety and first aid.",
+            "ar": "6 سنوات في أمان المسبح والإسعافات الأولية."
           },
           "img": ""
         }
@@ -1998,14 +2009,14 @@
         "accent": "var(--mx-site-primary, #2563eb)",
         "starcolor": "#f59e0b",
         "badge": {
-          "tr": "Müşteri yorumları",
-          "en": "Customer reviews",
-          "ar": "تقييمات العملاء"
+          "tr": "Yorumlar",
+          "en": "Reviews",
+          "ar": "التقييمات"
         },
         "title": {
-          "tr": "Müşterilerimiz ne diyor?",
-          "en": "What our customers say",
-          "ar": "ماذا يقول عملاؤنا؟"
+          "tr": "Öğrencilerimiz ne diyor?",
+          "en": "What our students say",
+          "ar": "ماذا يقول متدربونا؟"
         },
         "description": {
           "tr": "Kurgusal demo yorumlar.",
@@ -2021,29 +2032,29 @@
           "role": {
             "tr": "Öğrenci",
             "en": "Student",
-            "ar": "طالب"
+            "ar": "متدرب"
           },
           "rating": 5,
           "img": "",
           "text": {
-            "tr": "Seans düzenli; seviye net.",
-            "en": "Session regular; level clear.",
-            "ar": "جلسة منتظمة؛ المستوى واضح."
+            "tr": "Hiç yüzme bilmiyordum; üç ayda kulaç atmaya başladım.",
+            "en": "I could not swim at all; in three months I was swimming strokes.",
+            "ar": "لم أكن أعرف السباحة؛ وبعد ثلاثة أشهر بدأت أسبح بالضربات."
           }
         },
         {
           "name": "R. Yıldız.",
           "role": {
-            "tr": "Öğrenci Velisi",
+            "tr": "Öğrenci velisi",
             "en": "Parent",
             "ar": "ولي أمر"
           },
           "rating": 5,
           "img": "",
           "text": {
-            "tr": "Su kontrolü rapor açık.",
-            "en": "Water control report transparent.",
-            "ar": "تقرير تحقق الماء شفاف."
+            "tr": "Oğlum suya korkmadan girmeyi öğrendi; grup küçük ve ilgili.",
+            "en": "My son learned to enter the water without fear; the group is small and attentive.",
+            "ar": "تعلّم ابني دخول الماء دون خوف؛ والمجموعة صغيرة ومهتمة."
           }
         },
         {
@@ -2051,14 +2062,14 @@
           "role": {
             "tr": "Öğrenci",
             "en": "Student",
-            "ar": "طالب"
+            "ar": "متدرب"
           },
           "rating": 4,
           "img": "",
           "text": {
-            "tr": "Ders akışı sakin ve düzenli.",
-            "en": "Lesson flow calm and regular.",
-            "ar": "مسار الدرس هادئ ومنظم."
+            "tr": "Hocalar nefes tekniğini sabırla anlattı.",
+            "en": "The instructors explained breathing technique patiently.",
+            "ar": "شرح المدربون تقنية التنفس بصبر."
           }
         }
       ],
@@ -2103,19 +2114,19 @@
         "radius": "8px",
         "numara": true,
         "eyebrow": {
-          "tr": "Neyi iyi yaparız?",
-          "en": "What we do well",
-          "ar": "ما نتقنه؟"
+          "tr": "Havuzda neler var?",
+          "en": "What happens at the pool",
+          "ar": "ماذا يحدث عند المسبح؟"
         },
         "title": {
-          "tr": "Nasıl çalışır?",
-          "en": "How does it work?",
-          "ar": "كيف يعمل؟"
+          "tr": "Havuz, ısınma ve dinlenme",
+          "en": "Pool, warm-up and rest",
+          "ar": "المسبح والإحماء والاستراحة"
         },
         "description": {
-          "tr": "Görseller temsilidir; bu bir kurulum demosıdır.",
-          "en": "Images are representative; this is a setup demo.",
-          "ar": "الصور تمثيلية وهذا عرض تجريبي."
+          "tr": "Görseller temsilîdir (farklı tesislerden örnek kareler); içerik kurgusal bir demodur.",
+          "en": "Images are representative (sample shots from other venues); the content is a fictional demo.",
+          "ar": "الصور تمثيلية (لقطات نموذجية من منشآت أخرى)؛ والمحتوى عرض تجريبي افتراضي."
         },
         "ctaLabel": {
           "tr": "Ayrıntı",
@@ -2126,16 +2137,16 @@
       "data": [
         {
           "baslik": {
-            "tr": "Havuz bakımı",
-            "en": "Pool maintenance",
-            "ar": "صيانة المسبح"
+            "tr": "Çocuk yüzme grupları",
+            "en": "Kids' swim groups",
+            "ar": "مجموعات سباحة الأطفال"
           },
           "metin": {
-            "tr": "Su ve filtre bakımı.",
-            "en": "Water and filter maintenance.",
-            "ar": "صيانة ماء وفلتر."
+            "tr": "5–12 yaş; suya alışma ve temel kulaç.",
+            "en": "Ages 5–12; water confidence and basic strokes.",
+            "ar": "من 5 إلى 12 سنة؛ التآلف مع الماء والضربات الأساسية."
           },
-          "img": "spor-kosu-bandi.webp",
+          "img": "spor-havuz.webp",
           "alt": {
             "tr": "Temsilî görsel",
             "en": "Representative image",
@@ -2145,16 +2156,16 @@
         },
         {
           "baslik": {
-            "tr": "Yüzme dersi",
-            "en": "Swimming lesson",
-            "ar": "درس سباحة"
+            "tr": "Yetişkin başlangıç",
+            "en": "Adult beginners",
+            "ar": "مبتدئو الكبار"
           },
           "metin": {
-            "tr": "Başlangıç ve gelişim dersi.",
-            "en": "Beginner and progress lesson.",
-            "ar": "درس مبتدئ ومتقدم."
+            "tr": "Suya ilk kez girenler için sakin, küçük gruplar.",
+            "en": "Calm, small groups for first-time swimmers.",
+            "ar": "مجموعات صغيرة وهادئة لمن يدخل الماء لأول مرة."
           },
-          "img": "spor-kettlebell.webp",
+          "img": "otel-havuz.webp",
           "alt": {
             "tr": "Temsilî görsel",
             "en": "Representative image",
@@ -2164,14 +2175,14 @@
         },
         {
           "baslik": {
-            "tr": "Kıyafet ve alan",
-            "en": "Attire and area",
-            "ar": "ملابس ومنطقة"
+            "tr": "Özel ders",
+            "en": "Private lessons",
+            "ar": "دروس خاصة"
           },
           "metin": {
-            "tr": "Kıyafet değişim alanı.",
-            "en": "Attire change area.",
-            "ar": "منطقة تبديل ملابس."
+            "tr": "Birebir ders; hedefe göre teknik ve kondisyon.",
+            "en": "One-to-one lessons; technique and fitness to your goal.",
+            "ar": "دروس فردية؛ تقنية ولياقة حسب هدفك."
           },
           "img": "spor-ders-salonu.webp",
           "alt": {
@@ -2229,14 +2240,14 @@
         "radius": "8px",
         "showTitle": true,
         "title": {
-          "tr": "Birlikte çalıştığımız kuruluşlar",
-          "en": "Organisations we work with",
-          "ar": "جهات نعمل معها"
+          "tr": "Birlikte çalıştığımız kulüpler",
+          "en": "Clubs we work with",
+          "ar": "أندية نعمل معها"
         },
         "description": {
-          "tr": "Kurgusal iş ortağı adları; gerçek bir kuruluşa ait değildir.",
-          "en": "Fictional partner names; they do not belong to a real organisation.",
-          "ar": "أسماء شركاء افتراضية لا تعود إلى جهة حقيقية."
+          "tr": "Kurgusal kulüp ve kurum adları; gerçek bir kuruluşa ait değildir.",
+          "en": "Fictional club and organisation names; they do not belong to a real organisation.",
+          "ar": "أسماء أندية ومؤسسات افتراضية لا تعود إلى جهة حقيقية."
         },
         "listLabel": {
           "tr": "Referans logoları",
@@ -2246,22 +2257,22 @@
       },
       "data": [
         {
-          "name": "Demo Havuz"
+          "name": "Demo Okul Spor Kulübü"
         },
         {
-          "name": "Demo Ders"
+          "name": "Demo Belediye Spor"
         },
         {
-          "name": "Demo Su"
+          "name": "Demo Su Sporları"
         },
         {
-          "name": "Demo Kurtarma"
+          "name": "Demo Triatlon Kulübü"
         },
         {
-          "name": "Demo Seans"
+          "name": "Demo Sağlıklı Yaşam"
         },
         {
-          "name": "Demo Takip"
+          "name": "Demo Veli Derneği"
         }
       ],
       "veri": {
@@ -2304,51 +2315,91 @@
       },
       "data": [
         {
+          "question": {
+            "tr": "Yüzme bilmiyorum, başlayabilir miyim?",
+            "en": "I cannot swim; can I start?",
+            "ar": "لا أعرف السباحة، هل يمكنني البدء؟"
+          },
+          "answer": {
+            "tr": "Evet. Başlangıç grupları sıfırdan başlar; ilk ders deneme dersidir.",
+            "en": "Yes. Beginner groups start from zero; the first lesson is a trial.",
+            "ar": "نعم. تبدأ مجموعات المبتدئين من الصفر، والحصة الأولى تجريبية."
+          },
           "soru": {
-            "tr": "Su kalitesi nasıl kontrol?",
-            "en": "How is water quality controlled?",
-            "ar": "كيف يتحقق جودة الماء?"
+            "tr": "Yüzme bilmiyorum, başlayabilir miyim?",
+            "en": "I cannot swim; can I start?",
+            "ar": "لا أعرف السباحة، هل يمكنني البدء؟"
           },
           "cevap": {
-            "tr": "pH ve klor günlük ölçüm; demo metindir.",
-            "en": "Daily pH and chlorine measurement; this is a demo text.",
-            "ar": "قياس يومي PH وكلور؛ هذا نص تجريبي."
+            "tr": "Evet. Başlangıç grupları sıfırdan başlar; ilk ders deneme dersidir.",
+            "en": "Yes. Beginner groups start from zero; the first lesson is a trial.",
+            "ar": "نعم. تبدأ مجموعات المبتدئين من الصفر، والحصة الأولى تجريبية."
           }
         },
         {
+          "question": {
+            "tr": "Yanımda neler getirmeliyim?",
+            "en": "What should I bring?",
+            "ar": "ماذا أحضر معي؟"
+          },
+          "answer": {
+            "tr": "Mayo ya da şort, bone, gözlük ve havlu; havuza girmeden önce duş alınır.",
+            "en": "Swimwear, a cap, goggles and a towel; please shower before entering the pool.",
+            "ar": "لباس سباحة وقبعة ونظارات ومنشفة؛ ويُرجى الاستحمام قبل دخول المسبح."
+          },
           "soru": {
-            "tr": "Ders kaç kişilik?",
-            "en": "How many people per lesson?",
-            "ar": "كم عدد الطلاب للدرس?"
+            "tr": "Yanımda neler getirmeliyim?",
+            "en": "What should I bring?",
+            "ar": "ماذا أحضر معي؟"
           },
           "cevap": {
-            "tr": "Seviye grubuna göre; demo metni değil.",
-            "en": "By level group; not a demo text.",
-            "ar": "حسب المجموعة؛ غير نص تجريبي."
+            "tr": "Mayo ya da şort, bone, gözlük ve havlu; havuza girmeden önce duş alınır.",
+            "en": "Swimwear, a cap, goggles and a towel; please shower before entering the pool.",
+            "ar": "لباس سباحة وقبعة ونظارات ومنشفة؛ ويُرجى الاستحمام قبل دخول المسبح."
           }
         },
         {
+          "question": {
+            "tr": "Sitedeki görseller ve veriler gerçek midir?",
+            "en": "Are the images and data on the site real?",
+            "ar": "هل الصور والبيانات في الموقع حقيقية؟"
+          },
+          "answer": {
+            "tr": "Hayır; bu bir kurulum örneğidir. Görseller temsilî, adlar, rakamlar ve kişiler kurgusaldır.",
+            "en": "No; this is a setup example. Images are representative and names, figures and people are fictional.",
+            "ar": "لا؛ هذا مثال تركيب. الصور تمثيلية والأسماء والأرقام والشخصيات افتراضية."
+          },
           "soru": {
             "tr": "Sitedeki görseller ve veriler gerçek midir?",
             "en": "Are the images and data on the site real?",
-            "ar": "هل الصور والبيانات في الموقع حقيقية?"
+            "ar": "هل الصور والبيانات في الموقع حقيقية؟"
           },
           "cevap": {
-            "tr": "Hayır; bu bir kuruluma örneğidir. Görseller temsilî, adlar, rakamlar ve kişiler kurgusaldır.",
+            "tr": "Hayır; bu bir kurulum örneğidir. Görseller temsilî, adlar, rakamlar ve kişiler kurgusaldır.",
             "en": "No; this is a setup example. Images are representative and names, figures and people are fictional.",
             "ar": "لا؛ هذا مثال تركيب. الصور تمثيلية والأسماء والأرقام والشخصيات افتراضية."
           }
         },
         {
+          "question": {
+            "tr": "Fiyatlar nasıl belirlenir?",
+            "en": "How are prices determined?",
+            "ar": "كيف تُحدَّد الأسعار؟"
+          },
+          "answer": {
+            "tr": "Grup ve haftalık ders sayısına göre belirlenir; güncel fiyat için bizimle iletişime geçin.",
+            "en": "Prices depend on the group and lessons per week; contact us for current rates.",
+            "ar": "يعتمد السعر على المجموعة وعدد الحصص أسبوعيًا؛ تواصل معنا للأسعار الحالية."
+          },
           "soru": {
             "tr": "Fiyatlar nasıl belirlenir?",
             "en": "How are prices determined?",
-            "ar": "كيف تُحدَّد الأسعار?"
+            "ar": "كيف تُحدَّد الأسعار؟"
           },
           "cevap": {
-            "tr": "İhtiyacınıza göre teklifle belirlenir; genel bir fiyat aralığı demo metninde yer almaz.",
-            "en": "A quote based on your needs sets the price; a general range is not shown in this demo text.",
-            "ar": "يُحدَّد السعر عبر عرض سعر حسب احتياجاتك؛ ولا يُذكر نطاق عام في هذا النص التجريبي."
+            "tr": "Grup ve haftalık ders sayısına göre belirlenir; güncel fiyat için bizimle iletişime geçin.",
+            "en": "Prices depend on the group and lessons per week; contact us for current rates.",
+            "ar": "يعتمد السعر على المجموعة وعدد الحصص أسبوعيًا؛ تواصل معنا للأسعار الحالية."
           }
         }
       ],
@@ -2406,14 +2457,14 @@
         "errcolor": "var(--mx-color-danger, #b42318)",
         "radius": "8px",
         "title": {
-          "tr": "Teklif isteyin",
-          "en": "Request a quote",
-          "ar": "اطلب عرض سعر"
+          "tr": "Deneme dersi isteyin",
+          "en": "Request a trial lesson",
+          "ar": "اطلب حصة تجريبية"
         },
         "description": {
-          "tr": "Bilgilerinizi bırakın; en geç iki iş günü içinde dönüş yaparız. Bu form demodur; e-posta istemciniz açılır, veri saklanmaz.",
-          "en": "Leave your details; we reply within two business days. This form is a demo; it opens your e-mail client and stores no data.",
-          "ar": "اترك بياناتك وسنرد خلال يومي عمل. هذا النموذج تجريبي؛ يفتح برنامج البريد لديك ولا يحفظ أي بيانات."
+          "tr": "Yaşınızı ve yüzme seviyenizi kısaca yazın; en geç iki iş günü içinde dönüş yaparız. Bu form demodur; e-posta istemciniz açılır, veri saklanmaz.",
+          "en": "Briefly tell us your age and swimming level; we reply within two business days. This form is a demo; it opens your e-mail client and stores no data.",
+          "ar": "اكتب باختصار عمرك ومستواك في السباحة؛ نردّ خلال يومي عمل على الأكثر. هذا النموذج تجريبي؛ يفتح برنامج البريد لديك ولا يتم حفظ أي بيانات."
         },
         "panelTitle": {
           "tr": "Dalga Yüzme",
@@ -2421,9 +2472,9 @@
           "ar": "Dalga Yüzme"
         },
         "panelText": {
-          "tr": "Görseller temsilidir; bu bir kurulum demosıdır.",
-          "en": "Images are representative; this is a setup demo.",
-          "ar": "الصور تمثيلية وهذا عرض تجريبي."
+          "tr": "Görseller temsilîdir; içerik kurgusaldır.",
+          "en": "Images are representative; the content is fictional.",
+          "ar": "الصور تمثيلية والمحتوى افتراضي."
         },
         "address": {
           "tr": "Dalga Sokak No: 3, Şahinbey, Gaziantep (kurgusal adres)",
@@ -2477,9 +2528,9 @@
         },
         "social": [],
         "formTitle": {
-          "tr": "Teklif formu",
-          "en": "Quote form",
-          "ar": "نموذج الطلب"
+          "tr": "Deneme dersi formu",
+          "en": "Trial lesson form",
+          "ar": "نموذج الحصة التجريبية"
         },
         "nameLabel": {
           "tr": "Ad Soyad",
@@ -2510,25 +2561,25 @@
           {
             "id": "a",
             "name": {
-              "tr": "Yeni talep",
-              "en": "New request",
-              "ar": "طلب جديد"
+              "tr": "Deneme dersi",
+              "en": "Trial lesson",
+              "ar": "حصة تجريبية"
             }
           },
           {
             "id": "b",
             "name": {
-              "tr": "Ölçü ve keşif",
-              "en": "Measure and survey",
-              "ar": "قياس واستقصاء"
+              "tr": "Çocuk grubu",
+              "en": "Kids' group",
+              "ar": "مجموعة الأطفال"
             }
           },
           {
             "id": "c",
             "name": {
-              "tr": "Teknik soru",
-              "en": "Technical question",
-              "ar": "سؤال فني"
+              "tr": "Yetişkin grubu",
+              "en": "Adult group",
+              "ar": "مجموعة الكبار"
             }
           },
           {
@@ -2615,7 +2666,8 @@
           "tr": "Merhaba, web sitenizden yazıyorum.",
           "en": "Hello, I am writing from your website.",
           "ar": "مرحبًا، أكتب إليكم من موقعكم الإلكتروني."
-        }
+        },
+        "formAction": ""
       },
       "data": [],
       "veri": {
@@ -2639,33 +2691,33 @@
           "ar": "Dalga Yüzme"
         },
         "description": {
-          "tr": "Dalga Yüzme, yüzme dersi verir. Görseller temsilidir; metinler kurgusaldır.",
-          "en": "Dalga gives swim lessons. Images are representative and text is fictional.",
-          "ar": "يعطي دالجا درس سباحة. الصور تمثيلية والنصوص افتراضية."
+          "tr": "Dalga Yüzme; çocuk ve yetişkinlere seviyeye göre yüzme dersi veren kurgusal bir yüzme okuludur. Görseller temsilîdir; metinler kurgusaldır.",
+          "en": "Dalga Yüzme is a fictional swim school teaching children and adults by level. Images are representative and text is fictional.",
+          "ar": "دالغا للسباحة مدرسة سباحة افتراضية تعلّم الأطفال والكبار حسب المستوى. الصور تمثيلية والنصوص افتراضية."
         },
         "name2": {
-          "tr": "Kıyafet alanı",
-          "en": "Attire area",
-          "ar": "منطقة الملابس"
+          "tr": "Kuru zemin ısınma",
+          "en": "Dry-land warm-up",
+          "ar": "إحماء على اليابسة"
         },
         "spot2": {
-          "tr": "Ders arası değişim ve kuruma alanı.",
-          "en": "A change and dry area between lessons.",
-          "ar": "منطقة تبديل وتجفيف بين الدروس."
+          "tr": "Ders öncesi esneme ve ısınma alanı.",
+          "en": "A stretching and warm-up area before lessons.",
+          "ar": "منطقة تمدد وإحماء قبل الحصص."
         },
-        "icon2": "verified",
+        "icon2": "self_improvement",
         "name3": {
-          "tr": "Değerlendirme defteri",
-          "en": "Assessment book",
-          "ar": "دفتر التقويم"
+          "tr": "Dinlenme alanı",
+          "en": "Rest area",
+          "ar": "منطقة الاستراحة"
         },
         "spot3": {
-          "tr": "Her öğrenci için değerlendirme raporu.",
-          "en": "An assessment report for each student.",
-          "ar": "تقرير تقويم لكل طالب."
+          "tr": "Ders sonrası oturma ve şezlong alanı.",
+          "en": "A seating and lounger area after lessons.",
+          "ar": "منطقة جلوس ومقاعد استلقاء بعد الحصص."
         },
-        "icon3": "schedule",
-        "img": "spor-hero-salon.webp",
+        "icon3": "beach_access",
+        "img": "otel-hero-bahce.webp",
         "bgcolor": "var(--mx-site-surface-2, #ececea)",
         "fontcolor": "var(--mx-site-text, #1b1b1b)",
         "margintop": "20",
@@ -2753,9 +2805,9 @@
           "ar": "اتصل بنا"
         },
         "callText": {
-          "tr": "Hafta içi 09:00 – 18:00",
-          "en": "Weekdays 09:00 – 18:00",
-          "ar": "أيام الأسبوع 09:00 – 18:00"
+          "tr": "Her gün 09:00 – 21:00",
+          "en": "Every day 09:00 – 21:00",
+          "ar": "كل يوم 09:00 – 21:00"
         },
         "callBtn": {
           "tr": "Ara",
@@ -2847,25 +2899,25 @@
         "bordercolor": "color-mix(in srgb, var(--mx-site-text, #1b1b1b) 14%, transparent)",
         "radius": "8px",
         "title": {
-          "tr": "Çekmeye hazır",
-          "en": "Ready to dive",
-          "ar": "جاهز للغوص"
+          "tr": "Deneme dersine bekleriz",
+          "en": "Come to a trial lesson",
+          "ar": "نرحب بك في حصة تجريبية"
         },
         "text": {
-          "tr": "İki iş günü içinde dönüş yaparız. Bu demo sitede veri saklanmaz.",
-          "en": "We reply within two business days. No data is stored on this demo site.",
-          "ar": "نردّ خلال يومي عمل. لا تُحفظ أي بيانات في هذا الموقع التجريبي."
+          "tr": "Formu doldurun; iki iş günü içinde dönüş yaparız. Bu demo sitede veri saklanmaz.",
+          "en": "Fill in the form; we reply within two business days. No data is stored on this demo site.",
+          "ar": "املأ النموذج ونردّ خلال يومي عمل. لا تُحفظ أي بيانات في هذا الموقع التجريبي."
         },
         "btn1Label": {
-          "tr": "Formu doldurun",
-          "en": "Fill the form",
-          "ar": "املأ النموذج"
+          "tr": "Deneme dersi al",
+          "en": "Book a trial lesson",
+          "ar": "احجز حصة تجريبية"
         },
         "btn1Url": "teklif-al",
         "btn2Label": {
-          "tr": "Hizmetleri gör",
-          "en": "See services",
-          "ar": "شاهد الخدمات"
+          "tr": "Ders gruplarını gör",
+          "en": "See lesson groups",
+          "ar": "شاهد مجموعات الدروس"
         },
         "btn2Url": "hizmetler",
         "number": "903420200115",

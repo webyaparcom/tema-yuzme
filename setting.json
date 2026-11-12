@@ -2,14 +2,14 @@
   "order": false,
   "user": false,
   "description": {
-    "tr": "Yüzme dersi; görseller temsilîdir.",
-    "en": "Swim lessons; images are representative.",
-    "ar": "دروس سباحة؛ الصور تمثيلية."
+    "tr": "Çocuk ve yetişkin yüzme dersleri; küçük gruplar, cankurtaran gözetimi. Görseller temsilîdir.",
+    "en": "Swim lessons for children and adults; small groups with lifeguard supervision. Images are representative.",
+    "ar": "دروس سباحة للأطفال والكبار؛ مجموعات صغيرة بإشراف منقذ. الصور تمثيلية."
   },
   "keyword": {
-    "tr": "yüzme, havuz, ders",
-    "en": "swimming, pool, lessons",
-    "ar": "سباحة، مسبح، دروس"
+    "tr": "yüzme okulu, yüzme dersi, çocuk yüzme, havuz",
+    "en": "swim school, swimming lessons, kids swimming, pool",
+    "ar": "مدرسة سباحة، دروس سباحة، سباحة أطفال، مسبح"
   },
   "category": "Kurumsal",
   "name": "Dalga Yüzme",

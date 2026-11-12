@@ -1,7 +1,7 @@
 {
   "name": "Dalga Yüzme",
   "short_name": "Dalga Yüzme",
-  "description": "Yüzme dersi; görseller temsilîdir.",
+  "description": "Çocuk ve yetişkin yüzme dersleri; küçük gruplar, cankurtaran gözetimi. Görseller temsilîdir.",
   "start_url": "/tr/",
   "scope": "/",
   "display": "standalone",

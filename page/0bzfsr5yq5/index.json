@@ -6,14 +6,14 @@
     "ar": "خدماتنا"
   },
   "description": {
-    "tr": "Kayıttan dengeye; dersten takibe.",
-    "en": "From registration to balance; from lesson to tracking.",
-    "ar": "من التسجيل إلى التوازن؛ من الدرس إلى المتابعة."
+    "tr": "Çocuk, yetişkin ve özel ders; seviyeye göre gruplar.",
+    "en": "Kids, adults and private lessons; groups by level.",
+    "ar": "أطفال وكبار ودروس خاصة؛ مجموعات حسب المستوى."
   },
   "keyword": {
-    "tr": "Su & Hareket",
-    "en": "Water & Movement",
-    "ar": "ماء وحركة"
+    "tr": "Yüzme okulu",
+    "en": "Swim school",
+    "ar": "مدرسة السباحة"
   },
   "path": "hizmetler",
   "icon": "work",
@@ -36,5 +36,5 @@
     "ar": "خدماتنا"
   },
   "date": "2026-11-05T18:57:30.424Z",
-  "update": "2026-11-06T00:01:16.947Z"
+  "update": "2026-11-12T07:37:04.186Z"
 }

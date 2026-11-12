@@ -501,7 +501,7 @@
     justify-content: center;
     overflow: hidden;
     cursor: pointer;
-    background-image: url("/img/k8mp01/map.png?v=p4bpx") !important;
+    background-image: url("/img/k8mp01/map.png?v=b1kkx") !important;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -721,3 +721,4 @@
   @media (max-width: 480px) { .f0001-dk { font-size: 13px; } }
   @media (prefers-reduced-motion: reduce) { .f0001-dk-cta { transition: none; } .f0001-dk-cta:hover { gap: 4px; } }
 
+#header>header[class*="-m10"]:not([class*="-akista"]){top:var(--mx-demo-bandi-h,0px)}

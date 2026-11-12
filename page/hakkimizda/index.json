@@ -21,9 +21,9 @@
   },
   "pathnext": "",
   "description": {
-    "tr": "Yüzme dersi; görseller temsilîdir.",
-    "en": "Swim lessons; images are representative.",
-    "ar": "دروس سباحة؛ الصور تمثيلية."
+    "tr": "Yüzme okulu; görseller temsilîdir.",
+    "en": "A swim school; images are representative.",
+    "ar": "مدرسة سباحة؛ الصور تمثيلية."
   },
   "spot": {
     "tr": "",
@@ -42,6 +42,6 @@
     "ar": "من نحن"
   },
   "text": {},
-  "update": "2026-11-06T00:01:16.950Z",
+  "update": "2026-11-12T07:37:04.189Z",
   "date": "2026-10-30"
 }
